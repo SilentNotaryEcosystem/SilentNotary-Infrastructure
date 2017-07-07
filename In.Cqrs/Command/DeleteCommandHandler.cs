@@ -1,5 +1,4 @@
-﻿using System;
-using In.Domain;
+﻿using In.Domain;
 using In.Entity.Uow;
 
 namespace In.Cqrs.Command

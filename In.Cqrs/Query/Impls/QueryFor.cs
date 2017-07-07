@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using In.Cqrs.Query.Criterion.Abstract;
 
 namespace In.Cqrs.Query.Impls
