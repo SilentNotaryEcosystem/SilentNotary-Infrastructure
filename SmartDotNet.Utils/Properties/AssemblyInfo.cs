@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SmartDotNet.ApsNet.Identity")]
+[assembly: AssemblyTitle("SmartDotNet.Utils")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SmartDotNet.ApsNet.Identity")]
+[assembly: AssemblyProduct("SmartDotNet.Utils")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("dc8c92d9-7afd-45ee-ab93-731a3549d6e0")]
+[assembly: Guid("0c14114c-5971-4412-9d11-cb1f0cbd0c9f")]
 
 // Version information for an assembly consists of the following four values:
 //
