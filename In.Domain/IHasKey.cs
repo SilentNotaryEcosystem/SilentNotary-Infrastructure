@@ -1,13 +1,12 @@
 ﻿namespace In.Domain
 {
-    public interface IEntity
+    public interface IHasKey
     {
         object GetId();
     }
 
-    public interface IEntity<TId> : IEntity
+    public interface IHasKey<TId> : IHasKey
     {
         TId Id { get; set; }
-        bool IsNew();
     }
 }

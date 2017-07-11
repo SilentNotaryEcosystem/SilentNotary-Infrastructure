@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "In.Cqrs", "In.Cqrs\In.Cqrs.csproj", "{E7621461-2A46-4E5B-8189-BBA242D90955}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNet", "AspNet", "{F217E149-CC0C-4785-BC19-C188ED670595}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.ApsNet.Identity", "AspNet\SmartDotNet.ApsNet.Identity\SmartDotNet.ApsNet.Identity.csproj", "{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.FunctionalCSharp", "SmartDotNet.FunctionalCSharp\SmartDotNet.FunctionalCSharp.csproj", "{869857A4-CE3D-41AA-99D8-4670A79F10DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{869857A4-CE3D-41AA-99D8-4670A79F10DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869857A4-CE3D-41AA-99D8-4670A79F10DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869857A4-CE3D-41AA-99D8-4670A79F10DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869857A4-CE3D-41AA-99D8-4670A79F10DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,16 +4,11 @@ using In.Domain;
 
 namespace In.Entity
 {
-    public abstract class EntityBase<TId> : IEntity<TId>
+    public abstract class EntityBase<TId> : IHasKey<TId>
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual TId Id { get; set; }
-
-        public bool IsNew()
-        {
-            return Id == null || Id.Equals(default(TId));
-        }
 
         public object GetId()
         {

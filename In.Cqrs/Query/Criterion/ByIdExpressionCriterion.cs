@@ -5,7 +5,7 @@ using In.Domain;
 
 namespace In.Cqrs.Query.Criterion
 {
-    public class ByIdExpressionCriterion<T, TId> : IExpressionCriterion<T> where T : class, IEntity<TId>
+    public class ByIdExpressionCriterion<T, TId> : IExpressionCriterion<T> where T : class, IHasKey<TId>
     {
         private readonly TId _id;
 

@@ -9,7 +9,7 @@ using In.Entity.Uow;
 
 namespace In.Cqrs.Storage
 {
-    public class SimpleStorage<TEntity> : IStorage<TEntity> where TEntity : class, IEntity
+    public class SimpleStorage<TEntity> : IStorage<TEntity> where TEntity : class, IHasKey
     {
         private readonly IDiScope _diScope;
 

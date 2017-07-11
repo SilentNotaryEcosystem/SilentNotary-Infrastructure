@@ -5,7 +5,7 @@ using In.Domain;
 
 namespace In.Cqrs.Query.Criterion
 {
-    public class EmptyExpressionCriterion<T> : IExpressionCriterion<T> where T : class, IEntity<int>
+    public class EmptyExpressionCriterion<T> : IExpressionCriterion<T> where T : class, IHasKey<int>
     {
         public Expression<Func<T, bool>> Get()
         {

@@ -5,7 +5,7 @@ using In.Entity.Uow;
 namespace In.Cqrs.Command
 {
     public class SaveCommandHandler<TEntity>
-        where TEntity : class, IEntity
+        where TEntity : class, IHasKey
     {
         private readonly IDataSetUow _ctx;
 

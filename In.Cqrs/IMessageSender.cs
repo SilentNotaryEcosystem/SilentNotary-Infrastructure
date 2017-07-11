@@ -1,10 +1,12 @@
 ﻿using System.Threading.Tasks;
+using CSharpFunctionalExtensions;
 
 namespace In.Cqrs
 {
     public interface IMessageSender
     {
-        string Send<T>(T command) where T : IMessage;
-        Task<string> SendAsync<T>(T command) where T : IMessage;
+        Result Send<T>(T command) where T : IMessage;
+        Task<Result> SendAsync<TInput>(TInput command) where TInput : IMessage;
+        Task<Result<TOutput>> SendAsync<TInput, TOutput>(TInput command) where TInput : IMessage;
     }
 }

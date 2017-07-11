@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CSharpFunctionalExtensions;
 using In.Di;
 using Newtonsoft.Json.Linq;
 
@@ -16,18 +17,39 @@ namespace In.Cqrs
             _storage = storage;
         }
 
-        public string Send<T>(T command) where T : IMessage
+        public Result Send<T>(T command) where T : IMessage
         {
             return AsyncHelpers.RunSync(() => SendAsync(command));
         }
 
-        public async Task<string> SendAsync<T>(T command) where T : IMessage
+        public async Task<Result> SendAsync<TInput>(TInput command) where TInput : IMessage
         {
             var messageResult = GetLogModel(command);
 
             try
             {
-                var handler = _diScope.Resolve<IMsgHandler<T>>();
+                var handler = _diScope.Resolve<IMsgHandler<TInput>>();
+                return await handler.Handle(command);
+            }
+            catch (Exception e)
+            {
+                messageResult.Socceed = false;
+                messageResult.Info = e.ToString();
+                throw;
+            }
+            finally
+            {
+                SaveCommand(messageResult);
+            }
+        }
+
+        public async Task<Result<TOutput>> SendAsync<TInput, TOutput>(TInput command) where TInput : IMessage
+        {
+            var messageResult = GetLogModel(command);
+
+            try
+            {
+                var handler = _diScope.Resolve<IMsgHandler<TInput, TOutput>>();
                 return await handler.Handle(command);
             }
             catch (Exception e)

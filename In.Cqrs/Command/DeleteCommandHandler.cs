@@ -4,7 +4,7 @@ using In.Entity.Uow;
 namespace In.Cqrs.Command
 {
     public class DeleteCommandHandler<TEntity>
-        where TEntity : class, IEntity
+        where TEntity : class, IHasKey
     {
         private readonly IDataSetUow _dataSetUow;
         
