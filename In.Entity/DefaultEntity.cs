@@ -1,6 +1,6 @@
 ﻿namespace In.Entity
 {
-    public class DefaultEntity :  EntityBase<int>
+    public class DefaultEntity :  HasKeyBase<int>
     {
     }
 }

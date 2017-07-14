@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using In.Di;
@@ -6,6 +7,7 @@ using Newtonsoft.Json.Linq;
 
 namespace In.Cqrs
 {
+    [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
     public class SimpleMsgBus : IMessageSender
     {
         private readonly IDiScope _diScope;

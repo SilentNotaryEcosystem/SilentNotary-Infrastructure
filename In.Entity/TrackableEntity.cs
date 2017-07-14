@@ -2,7 +2,7 @@
 
 namespace In.Entity
 {
-    public abstract class TrackableEntity<TKey>: EntityBase<TKey>
+    public abstract class TrackableEntity<TKey>: HasKeyBase<TKey>
     {
         public DateTime Created { get; set; }
 

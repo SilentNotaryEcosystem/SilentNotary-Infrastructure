@@ -4,7 +4,7 @@ using In.Domain;
 
 namespace In.Entity
 {
-    public abstract class EntityBase<TId> : IHasKey<TId>
+    public abstract class HasKeyBase<TId> : IHasKey<TId>
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
