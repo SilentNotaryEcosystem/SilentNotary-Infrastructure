@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SmartDotNet.FunctionalCSharp")]
+[assembly: AssemblyTitle("SmartDotNet.Ef6.RuntimeUtils")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SmartDotNet.FunctionalCSharp")]
+[assembly: AssemblyProduct("SmartDotNet.Ef6.RuntimeUtils")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("869857a4-ce3d-41aa-99d8-4670a79f10de")]
+[assembly: Guid("ec15e8a5-d43b-4dfa-bf88-590686d55e12")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using In.Domain;
 using In.Entity.Uow;
+using SmartDotNet.Cqrs.Domain;
 
 namespace In.Cqrs.Command
 {

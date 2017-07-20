@@ -54,6 +54,10 @@
       <Project>{d5217d56-fbe4-4f61-8032-ca553eb6efeb}</Project>
       <Name>In.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj">
+      <Project>{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}</Project>
+      <Name>SmartDotNet.Cqrs.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

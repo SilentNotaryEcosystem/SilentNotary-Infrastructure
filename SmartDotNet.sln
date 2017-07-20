@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.ApsNet.Identity
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.FunctionalCSharp", "SmartDotNet.FunctionalCSharp\SmartDotNet.FunctionalCSharp.csproj", "{869857A4-CE3D-41AA-99D8-4670A79F10DE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cqrs", "Cqrs", "{45837C26-F1B6-4F7F-8703-5D69D099F3F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.Cqrs.Domain", "SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj", "{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,10 @@ Global
 		{869857A4-CE3D-41AA-99D8-4670A79F10DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{869857A4-CE3D-41AA-99D8-4670A79F10DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{869857A4-CE3D-41AA-99D8-4670A79F10DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +76,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9CC7C81A-97A6-4E12-8113-3DFA3B1C0CBA} = {F48DF6AB-C447-4B79-B4BC-64844A23BED5}
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0} = {F217E149-CC0C-4785-BC19-C188ED670595}
+		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8} = {45837C26-F1B6-4F7F-8703-5D69D099F3F6}
 	EndGlobalSection
 EndGlobal

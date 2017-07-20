@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using In.Domain;
+using SmartDotNet.Cqrs.Domain;
 
 namespace In.Entity
 {
@@ -9,10 +9,5 @@ namespace In.Entity
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual TId Id { get; set; }
-
-        public object GetId()
-        {
-            return Id;
-        }
     }
 }

@@ -1,5 +1,5 @@
 using System.Linq;
-using In.Domain;
+using SmartDotNet.Cqrs.Domain;
 
 namespace In.Cqrs.Query
 {
@@ -8,10 +8,10 @@ namespace In.Cqrs.Query
     public interface ILinqProvider
     {
         /// <summary>
-        ///     Query object for concrete <see cref="IHasKey" />
+        ///     Query object for concrete <see cref="SmartDotNet.Cqrs.Domain.IHasKey" />
         /// </summary>
         /// <typeparam name="TEntity">
-        ///     <see cref="IHasKey" />
+        ///     <see cref="SmartDotNet.Cqrs.Domain.IHasKey" />
         /// </typeparam>
         /// <returns>
         ///     <see cref="IQueryable{TEntity}" /> object for type of TEntity

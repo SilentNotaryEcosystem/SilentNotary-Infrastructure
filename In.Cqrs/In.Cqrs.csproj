@@ -34,9 +34,14 @@
     <Reference Include="CSharpFunctionalExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CSharpFunctionalExtensions.1.7.1\lib\netstandard1.0\CSharpFunctionalExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -110,6 +115,10 @@
     <ProjectReference Include="..\In.Entity\In.Entity.csproj">
       <Project>{6464E77B-E6CF-49B9-B9DB-6F4C83DDD8F8}</Project>
       <Name>In.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj">
+      <Project>{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}</Project>
+      <Name>SmartDotNet.Cqrs.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
