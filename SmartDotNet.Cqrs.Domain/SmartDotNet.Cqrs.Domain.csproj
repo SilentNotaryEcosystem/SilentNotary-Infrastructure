@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aggregate.cs" />
     <Compile Include="IAggregateRepository.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IHasKey.cs" />

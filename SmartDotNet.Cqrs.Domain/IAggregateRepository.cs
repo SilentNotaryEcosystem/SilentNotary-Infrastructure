@@ -4,9 +4,9 @@ using CSharpFunctionalExtensions;
 
 namespace SmartDotNet.Cqrs.Domain
 {
-    public interface IAggregateRepository<TRoot>
-        where TRoot : IAggregateRoot
+    public interface IAggregateRepository<TAggregate>
+        where TAggregate : Aggregate
     {
-        Task<Result<TRoot>> GetByIdAsync(Guid id);
+        Task<Result<TAggregate>> GetByIdAsync(Guid id);
     }
 }
