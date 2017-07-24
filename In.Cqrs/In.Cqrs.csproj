@@ -108,10 +108,6 @@
       <Project>{5497463F-9A30-4557-84EC-F8D5A9806293}</Project>
       <Name>In.Di</Name>
     </ProjectReference>
-    <ProjectReference Include="..\In.Domain\In.Domain.csproj">
-      <Project>{d5217d56-fbe4-4f61-8032-ca553eb6efeb}</Project>
-      <Name>In.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\In.Entity\In.Entity.csproj">
       <Project>{6464E77B-E6CF-49B9-B9DB-6F4C83DDD8F8}</Project>
       <Name>In.Entity</Name>
