@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using In.Cqrs.Query.Criterion.Abstract;
-using SmartDotNet.Cqrs.Domain;
+using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace In.Cqrs.Query.Criterion
 {

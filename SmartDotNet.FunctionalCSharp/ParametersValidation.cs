@@ -80,5 +80,12 @@ namespace SmartDotNet.FunctionalCSharp
                 return Result.Fail(errorText ?? $"parameter {name} did not pass parameter validation");
             return Result.Ok();
         }
+
+        public static Result Ensure(Func<bool> predicate, string name, string errorText = null)
+        {
+            if (!predicate())
+                return Result.Fail(errorText ?? $"parameter {name} did not pass parameter validation");
+            return Result.Ok();
+        }
     }
 }

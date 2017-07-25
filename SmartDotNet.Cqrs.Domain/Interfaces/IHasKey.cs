@@ -1,4 +1,4 @@
-﻿namespace SmartDotNet.Cqrs.Domain
+﻿namespace SmartDotNet.Cqrs.Domain.Interfaces
 {
     public interface IHasKey
     {

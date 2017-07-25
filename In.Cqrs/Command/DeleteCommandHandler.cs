@@ -1,5 +1,5 @@
 ﻿using In.Entity.Uow;
-using SmartDotNet.Cqrs.Domain;
+using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace In.Cqrs.Command
 {

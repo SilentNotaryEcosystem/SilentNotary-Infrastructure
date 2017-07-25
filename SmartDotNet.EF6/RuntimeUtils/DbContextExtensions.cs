@@ -4,7 +4,7 @@ using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 
-namespace SmartDotNet.Ef6.RuntimeUtils.Extensions
+namespace SmartDotNet.EF6.RuntimeUtils
 {
     public static class DbContextExtensions
     {
@@ -34,7 +34,7 @@ namespace SmartDotNet.Ef6.RuntimeUtils.Extensions
         public static ICollection<T> ReAttachCollection<T>(this DbContext context, ICollection<T> source)
             where T: class
         {
-            return source.Select(context.ReAttach).ToList();
+            return source.Select(context.ReAttach).ToList<T>();
         }
     }
 }

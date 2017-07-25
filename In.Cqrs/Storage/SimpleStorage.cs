@@ -5,7 +5,7 @@ using In.Cqrs.Query.Criterion.Abstract;
 using In.Cqrs.Query;
 using In.Di;
 using In.Entity.Uow;
-using SmartDotNet.Cqrs.Domain;
+using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace In.Cqrs.Storage
 {

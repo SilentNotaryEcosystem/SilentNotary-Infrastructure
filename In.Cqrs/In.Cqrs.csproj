@@ -69,9 +69,9 @@
     <Compile Include="Query\Criterion\EmptyCriterion.cs" />
     <Compile Include="Enums\DbAction.cs" />
     <Compile Include="Enums\CommandState.cs" />
-    <Compile Include="Events\EventDescriptor.cs" />
-    <Compile Include="Events\Impl\SimpleSubscriber.cs" />
-    <Compile Include="Events\ISubscriber.cs" />
+    <Compile Include="Enums\Events\EventDescriptor.cs" />
+    <Compile Include="Enums\Events\Impl\SimpleSubscriber.cs" />
+    <Compile Include="Enums\Events\ISubscriber.cs" />
     <Compile Include="Exceptions\AggregateNotFoundException.cs" />
     <Compile Include="Exceptions\ConcurrencyException.cs" />
     <Compile Include="ICommandData.cs" />

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using SmartDotNet.Cqrs.Domain;
+using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace In.Entity
 {

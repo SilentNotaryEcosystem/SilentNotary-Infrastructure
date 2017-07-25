@@ -11,10 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "In.Mapping", "In.Mapping\In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "In.Di", "In.Di\In.Di.csproj", "{5497463F-9A30-4557-84EC-F8D5A9806293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.EF6.Configuration", "EF6\SmartDotNet.EF6.Configuration\SmartDotNet.EF6.Configuration.csproj", "{9CC7C81A-97A6-4E12-8113-3DFA3B1C0CBA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF6", "EF6", "{F48DF6AB-C447-4B79-B4BC-64844A23BED5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspNet", "AspNet", "{F217E149-CC0C-4785-BC19-C188ED670595}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.ApsNet.Identity", "AspNet\SmartDotNet.ApsNet.Identity\SmartDotNet.ApsNet.Identity.csproj", "{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0}"
@@ -24,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cqrs", "Cqrs", "{45837C26-F1B6-4F7F-8703-5D69D099F3F6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.Cqrs.Domain", "SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj", "{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.EF6", "SmartDotNet.EF6\SmartDotNet.EF6.csproj", "{91B4FC6A-7C69-4C5C-B15A-8E530D2634EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +45,6 @@ Global
 		{5497463F-9A30-4557-84EC-F8D5A9806293}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5497463F-9A30-4557-84EC-F8D5A9806293}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5497463F-9A30-4557-84EC-F8D5A9806293}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CC7C81A-97A6-4E12-8113-3DFA3B1C0CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CC7C81A-97A6-4E12-8113-3DFA3B1C0CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CC7C81A-97A6-4E12-8113-3DFA3B1C0CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CC7C81A-97A6-4E12-8113-3DFA3B1C0CBA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,12 +57,15 @@ Global
 		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91B4FC6A-7C69-4C5C-B15A-8E530D2634EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91B4FC6A-7C69-4C5C-B15A-8E530D2634EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91B4FC6A-7C69-4C5C-B15A-8E530D2634EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91B4FC6A-7C69-4C5C-B15A-8E530D2634EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{9CC7C81A-97A6-4E12-8113-3DFA3B1C0CBA} = {F48DF6AB-C447-4B79-B4BC-64844A23BED5}
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0} = {F217E149-CC0C-4785-BC19-C188ED670595}
 		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8} = {45837C26-F1B6-4F7F-8703-5D69D099F3F6}
 	EndGlobalSection

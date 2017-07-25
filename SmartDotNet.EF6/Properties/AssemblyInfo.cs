@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SmartDotNet.EF6.Configuration")]
+[assembly: AssemblyTitle("SmartDotNet.EF6")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SmartDotNet.EF6.Configuration")]
+[assembly: AssemblyProduct("SmartDotNet.EF6")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9cc7c81a-97a6-4e12-8113-3dfa3b1c0cba")]
+[assembly: Guid("91b4fc6a-7c69-4c5c-b15a-8e530d2634eb")]
 
 // Version information for an assembly consists of the following four values:
 //
