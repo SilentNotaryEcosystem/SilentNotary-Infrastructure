@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 
 namespace SmartDotNet.Cqrs.Domain.Interfaces
 {

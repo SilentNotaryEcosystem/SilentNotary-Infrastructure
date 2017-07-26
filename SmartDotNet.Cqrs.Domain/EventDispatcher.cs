@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Autofac;
+﻿using Autofac;
 using CSharpFunctionalExtensions;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 using SmartDotNet.FunctionalCSharp;
