@@ -86,7 +86,6 @@
     <Compile Include="Query\Criterion\Abstract\IGenericCriterion.cs" />
     <Compile Include="Query\Criterion\Abstract\ICriterion.cs" />
     <Compile Include="Query\IEntityComponent.cs" />
-    <Compile Include="Query\ILinqProvider.cs" />
     <Compile Include="Query\Impls\QueryBuilder.cs" />
     <Compile Include="Query\Impls\QueryFactory.cs" />
     <Compile Include="Query\IQuery.cs" />

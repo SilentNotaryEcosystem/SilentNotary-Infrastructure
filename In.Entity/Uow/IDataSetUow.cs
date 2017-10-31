@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace In.Entity.Uow
 {
     public interface IDataSetUow
     {
-        IQueryable<T> Query<T>() where T : class;
+        IQueryable<T> Query<T>() where T : class, IHasKey;
         IQueryable Query(Type type);
         IQueryable<T> Include<T, TProp>(IQueryable<T> queryable, params Expression<Func<T, TProp>>[] paths) where T : class;
         object GetContext();

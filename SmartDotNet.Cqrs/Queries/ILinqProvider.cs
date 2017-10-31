@@ -1,7 +1,7 @@
 using System.Linq;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
-namespace In.Cqrs.Query
+namespace SmartDotNet.Cqrs.Queries
 {
     /// <summary>
     /// </summary>
@@ -17,6 +17,6 @@ namespace In.Cqrs.Query
         ///     <see cref="IQueryable{TEntity}" /> object for type of TEntity
         /// </returns>
         IQueryable<TEntity> Query<TEntity>()
-            where TEntity : class, IHasKey, new();
+            where TEntity : class, IHasKey;
     }
 }

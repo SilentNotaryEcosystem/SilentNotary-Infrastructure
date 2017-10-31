@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using In.Cqrs.Query.Criterion.Abstract;
 using In.Entity.Uow;
+using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace In.Cqrs.Query
 {
@@ -13,7 +14,7 @@ namespace In.Cqrs.Query
             _dataSetUow = dataSetUow;
         }
 
-        public IQueryable<T> Ask<T>(IExpressionCriterion<T> criterion) where T : class
+        public IQueryable<T> Ask<T>(IExpressionCriterion<T> criterion) where T : class, IHasKey
         {
             return _dataSetUow
                 .Query<T>()
