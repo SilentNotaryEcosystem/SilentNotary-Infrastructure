@@ -14,5 +14,6 @@ namespace In.Cqrs.Query.Criterion
         }
 
         public Expression<Func<T, bool>> Get() => _expression;
+        public T Value { get; set; }
     }
 }

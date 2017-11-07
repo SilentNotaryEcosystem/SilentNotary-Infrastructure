@@ -11,5 +11,7 @@ namespace In.Cqrs.Query.Criterion
         {
             return entity => true;
         }
+
+        public T Value { get; set; }
     }
 }

@@ -18,5 +18,7 @@ namespace In.Cqrs.Query.Criterion
         {
             return entity => (object) entity.Id == (object) _id;
         }
+
+        public T Value { get; set; }
     }
 }

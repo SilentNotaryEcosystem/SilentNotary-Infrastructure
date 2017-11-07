@@ -88,12 +88,14 @@
     <Compile Include="Query\IEntityComponent.cs" />
     <Compile Include="Query\Impls\QueryBuilder.cs" />
     <Compile Include="Query\Impls\QueryFactory.cs" />
+    <Compile Include="Query\IMultipleQueryResult.cs" />
     <Compile Include="Query\IQuery.cs" />
     <Compile Include="Query\IQueryBuilder.cs" />
     <Compile Include="Query\IQueryFactory.cs" />
     <Compile Include="Query\IQueryFor.cs" />
     <Compile Include="Query\Impls\QueryFor.cs" />
     <Compile Include="Query\ExpressionQuery.cs" />
+    <Compile Include="Query\ISingleQueryResult.cs" />
     <Compile Include="SimpleEventStore.cs" />
     <Compile Include="SimpleMsgBus.cs" />
     <Compile Include="Storage\SimpleStorage.cs" />
