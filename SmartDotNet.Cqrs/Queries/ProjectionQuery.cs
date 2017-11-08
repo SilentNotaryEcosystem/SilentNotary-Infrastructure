@@ -11,8 +11,7 @@ using SmartDotNet.Cqrs.Specifications;
 namespace SmartDotNet.Cqrs.Queries
 {
     public class ProjectionQuery<TSource, TDest>
-        : IQuery<Specification<TSource>, TDest>,
-            IQuery<Specification<TSource>, IEnumerable<TDest>>
+        : IQuery<Specification<TSource>, IEnumerable<TDest>>
         where TSource : class, IHasKey
         where TDest : class
     {
@@ -29,11 +28,6 @@ namespace SmartDotNet.Cqrs.Queries
             => _linqProvider.Query<TSource>()
                 .Where(spec)
                 .ProjectTo<TDest>(_mapperConfiguration);
-
-
-        public Task<TDest> Ask(Specification<TSource> spec)
-            => Query(spec)
-                .FirstOrDefaultAsync();
 
         async Task<IEnumerable<TDest>> IQuery<Specification<TSource>, IEnumerable<TDest>>.Ask(
             Specification<TSource> spec)
