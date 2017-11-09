@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SmartDotNet.Cqrs.Domain.Interfaces
 {
-    public interface IAggregateRoot : IHasKey<Guid>
+    public interface IAggregateRoot 
     {
         IEnumerable<IDomainEvent> DomainEvents { get; }
+        void ClearEvents();
     }
 }

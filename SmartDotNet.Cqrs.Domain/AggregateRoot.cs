@@ -5,10 +5,8 @@ using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace SmartDotNet.Cqrs.Domain
 {
-    public abstract class AggregateRoot : IAggregateRoot
+    public abstract class AggregateRoot<TId> : DomainEntityBase<TId>, IAggregateRoot
     {
-        public abstract Guid Id { get; protected set; }
-
         private readonly IDictionary<Type, IDomainEvent> _events = new ConcurrentDictionary<Type, IDomainEvent>();
 
         public IEnumerable<IDomainEvent> DomainEvents => _events.Values;
