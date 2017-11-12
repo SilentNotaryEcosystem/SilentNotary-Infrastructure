@@ -59,8 +59,6 @@ namespace SmartDotNet.Cqrs.Domain
 
     public abstract class DomainEntityBase<TId> : DomainEntityBase, IHasKey<TId>, IEquatable<DomainEntityBase<TId>>
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public virtual TId Id { get; set; }
 
         public bool IsTransient()
