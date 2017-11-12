@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregateRepository.cs" />
     <Compile Include="AggregateRoot.cs" />
     <Compile Include="DomainEntityBase.cs" />
     <Compile Include="EventDispatcher.cs" />

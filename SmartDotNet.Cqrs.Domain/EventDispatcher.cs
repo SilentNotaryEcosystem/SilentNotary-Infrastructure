@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Threading.Tasks;
+using Autofac;
 using CSharpFunctionalExtensions;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 using SmartDotNet.FunctionalCSharp;
@@ -14,16 +15,19 @@ namespace SmartDotNet.Cqrs.Domain
             _context = context;
         }
 
-        public Result Dispatch<T>(T @event) where T : IDomainEvent
+        public Task<Result> Dispatch<T>(T @event) where T : IDomainEvent
         {
-            return             
-                ParametersValidation.NotNull(@event, nameof(@event))            
-            .OnSuccess(() =>
-                {                    
-                    var handler =_context.ResolveOptional<IEventHandler<T>>();
-                    return handler?.Handle(@event) ?? Result.Ok();
-                })
-            ;            
+            return
+                ParametersValidation.NotNull(@event, nameof(@event))
+                    .OnSuccess(() =>
+                    {
+                        var handler = _context.ResolveOptional<IEventHandler<T>>();
+                        if (handler != null)
+                            return handler.Handle(@event);
+
+                        return Task.FromResult(Result.Ok());
+                    })
+                ;
         }
     }
 }
