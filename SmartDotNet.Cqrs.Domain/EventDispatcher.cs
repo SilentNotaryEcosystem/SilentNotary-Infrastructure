@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Reflection;
+using System.Threading.Tasks;
 using Autofac;
 using CSharpFunctionalExtensions;
 using SmartDotNet.Cqrs.Domain.Interfaces;
@@ -15,17 +17,24 @@ namespace SmartDotNet.Cqrs.Domain
             _context = context;
         }
 
-        public Task<Result> Dispatch<T>(T @event) where T : IDomainEvent
+        public Task<Result> Dispatch(IDomainEvent @event)
         {
             return
                 ParametersValidation.NotNull(@event, nameof(@event))
                     .OnSuccess(() =>
                     {
-                        var handler = _context.ResolveOptional<IEventHandler<T>>();
-                        if (handler != null)
-                            return handler.Handle(@event);
+                        var eventType = @event.GetType();
+                        var handlerType = typeof(IEventHandler<>).MakeGenericType(eventType);
+                        var handler = _context.ResolveOptional(handlerType);
 
-                        return Task.FromResult(Result.Ok());
+                        if (handler == null) return Task.FromResult(Result.Ok());
+
+                        var method = handler.GetType()
+                            .GetRuntimeMethods()
+                            .First(x => x.Name.Equals("HandleAsync")
+                                        && x.GetParameters().First().ParameterType == eventType);
+
+                        return (Task<Result>) method.Invoke(handler, new object[] { @event });
                     })
                 ;
         }
