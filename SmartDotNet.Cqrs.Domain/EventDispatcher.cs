@@ -17,26 +17,26 @@ namespace SmartDotNet.Cqrs.Domain
             _context = context;
         }
 
-        public Task<Result> Dispatch(IDomainEvent @event)
+        public async Task<Result> Dispatch(IDomainEvent @event)
         {
-            return
-                ParametersValidation.NotNull(@event, nameof(@event))
-                    .OnSuccess(() =>
-                    {
-                        var eventType = @event.GetType();
-                        var handlerType = typeof(IEventHandler<>).MakeGenericType(eventType);
-                        var handler = _context.ResolveOptional(handlerType);
+            var validationResult =
+                ParametersValidation.NotNull(@event, nameof(@event));
+            if (validationResult.IsFailure)
+                return validationResult;
 
-                        if (handler == null) return Task.FromResult(Result.Ok());
+            var eventType = @event.GetType();
+            var handlerType = typeof(IEventHandler<>).MakeGenericType(eventType);
+            var handler = _context.ResolveOptional(handlerType);
 
-                        var method = handler.GetType()
-                            .GetRuntimeMethods()
-                            .First(x => x.Name.Equals("HandleAsync")
-                                        && x.GetParameters().First().ParameterType == eventType);
+            if (handler == null) return Result.Ok();
 
-                        return (Task<Result>) method.Invoke(handler, new object[] { @event });
-                    })
-                ;
-        }
+            var method = handler.GetType()
+                .GetRuntimeMethods()
+                .First(x => x.Name.Equals("HandleAsync")
+                            && x.GetParameters().First().ParameterType == eventType);
+
+            return await (Task<Result>) method.Invoke(handler, new object[] { @event });
     }
+}
+
 }
