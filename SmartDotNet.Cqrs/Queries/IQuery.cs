@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace In.Cqrs.Query
+namespace SmartDotNet.Cqrs.Queries
 {
     /// <summary>
     ///     Интерфейс для объектов запросов к базе

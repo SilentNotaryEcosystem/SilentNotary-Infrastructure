@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using In.Cqrs.Query.Criterion.Abstract;
 
-namespace In.Cqrs.Query
+namespace SmartDotNet.Cqrs.Queries
 {
     /// <summary>
     ///     Интерфейс для задания критериев запроса

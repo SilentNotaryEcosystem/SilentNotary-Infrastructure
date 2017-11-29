@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
+using In.Cqrs;
 using In.Cqrs.Query.Criterion.Abstract;
 
-namespace In.Cqrs.Query.Impls
+namespace SmartDotNet.Cqrs.Queries.Impls
 {
     /// <summary>
-    ///     Стандартная реализация <see cref="IQueryFor{T}" />
+    ///     Стандартная реализация <see cref="SmartDotNet.Cqrs.Queries.IQueryFor{T}" />
     /// </summary>
     /// <typeparam name="TResult">Результат возвращаемый запросом</typeparam>
     public class QueryFor<TResult> : IQueryFor<TResult>

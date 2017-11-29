@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
-using In.Cqrs.Query.Criterion.Abstract;
 using SmartDotNet.Cqrs.Specifications.Helpers.BooleanOperators;
 
 namespace SmartDotNet.Cqrs.Specifications
 {
-    public abstract class Specification<T> : ICriterion // todo: do not use ICriterion, duplicating pattern
+    public abstract class Specification<T>
     {
         internal abstract Expression<Func<T, bool>> ToExpression();
 

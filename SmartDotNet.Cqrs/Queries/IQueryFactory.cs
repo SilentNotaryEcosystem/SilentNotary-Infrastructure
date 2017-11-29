@@ -1,6 +1,6 @@
 ﻿using In.Cqrs.Query.Criterion.Abstract;
 
-namespace In.Cqrs.Query
+namespace SmartDotNet.Cqrs.Queries
 {
     /// <summary>
     ///     Фабрика объектов запросов

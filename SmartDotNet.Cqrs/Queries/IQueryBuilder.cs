@@ -1,4 +1,6 @@
-﻿namespace In.Cqrs.Query
+﻿using SmartDotNet.Cqrs.Domain.Interfaces;
+
+namespace SmartDotNet.Cqrs.Queries
 {
     /// <summary>
     ///     Интерфейс для построителя запросов
@@ -11,5 +13,8 @@
         /// <typeparam name="TResult"></typeparam>
         /// <returns></returns>
         IQueryFor<TResult> For<TResult>();
+
+        IGenericQueryBuilder<TSource> Generic<TSource>()
+            where TSource: class, IHasKey;
     }
 }

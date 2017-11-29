@@ -50,6 +50,10 @@
       <Project>{5497463F-9A30-4557-84EC-F8D5A9806293}</Project>
       <Name>In.Di</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SmartDotNet.Cqrs\SmartDotNet.Cqrs.csproj">
+      <Project>{86E8DAF6-B3FA-46B0-8B47-7E348F795413}</Project>
+      <Name>SmartDotNet.Cqrs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

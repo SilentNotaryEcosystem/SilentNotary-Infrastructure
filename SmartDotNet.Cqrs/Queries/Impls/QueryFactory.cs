@@ -1,7 +1,7 @@
 ﻿using In.Cqrs.Query.Criterion.Abstract;
 using In.Di;
 
-namespace In.Cqrs.Query.Impls
+namespace SmartDotNet.Cqrs.Queries.Impls
 {
     public class QueryFactory : IQueryFactory
     {
