@@ -12,9 +12,9 @@ namespace SmartDotNet.Cqrs.Queries.Impls
 {
     public class GenericQueryBuilder<TSource> : GenericQuery<TSource>, IGenericQueryBuilder<TSource> where TSource : class, IHasKey
     {
-        private readonly MapperConfiguration _mapperConfiguration;
+        private readonly IConfigurationProvider _mapperConfiguration;
 
-        public GenericQueryBuilder(ILinqProvider linqProvider, MapperConfiguration mapperConfigurationProvider)
+        public GenericQueryBuilder(ILinqProvider linqProvider, IConfigurationProvider mapperConfigurationProvider)
             : base(linqProvider.Query<TSource>())
         {
             _mapperConfiguration = mapperConfigurationProvider;
