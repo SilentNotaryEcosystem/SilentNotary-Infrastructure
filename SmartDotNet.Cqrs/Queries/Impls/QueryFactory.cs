@@ -1,5 +1,5 @@
-﻿using In.Cqrs.Query.Criterion.Abstract;
-using In.Di;
+﻿using In.Cqrs;
+using In.Cqrs.Query.Criterion.Abstract;
 
 namespace SmartDotNet.Cqrs.Queries.Impls
 {

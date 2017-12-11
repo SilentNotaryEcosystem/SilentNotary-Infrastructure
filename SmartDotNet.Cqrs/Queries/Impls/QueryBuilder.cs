@@ -1,4 +1,4 @@
-﻿using In.Di;
+﻿using In.Cqrs;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace SmartDotNet.Cqrs.Queries.Impls

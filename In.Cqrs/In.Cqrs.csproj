@@ -47,6 +47,7 @@
     <Compile Include="AsyncHelpers.cs" />
     <Compile Include="Command\DeleteCommandHandler.cs" />
     <Compile Include="Command\SaveCommandHandler.cs" />
+    <Compile Include="IDiScope.cs" />
     <Compile Include="IMessageResult.cs" />
     <Compile Include="Query\Criterion\Abstract\IExpressionCriterion.cs" />
     <Compile Include="Query\Criterion\Abstract\IPagingCriterion.cs" />
@@ -87,10 +88,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\In.Di\In.Di.csproj">
-      <Project>{5497463F-9A30-4557-84EC-F8D5A9806293}</Project>
-      <Name>In.Di</Name>
-    </ProjectReference>
     <ProjectReference Include="..\In.Entity\In.Entity.csproj">
       <Project>{6464E77B-E6CF-49B9-B9DB-6F4C83DDD8F8}</Project>
       <Name>In.Entity</Name>

@@ -1,4 +1,4 @@
-﻿using In.Di;
+﻿using In.Cqrs;
 
 namespace In.Mapping
 {

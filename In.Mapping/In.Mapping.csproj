@@ -46,9 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\In.Di\In.Di.csproj">
-      <Project>{5497463F-9A30-4557-84EC-F8D5A9806293}</Project>
-      <Name>In.Di</Name>
+    <ProjectReference Include="..\In.Cqrs\In.Cqrs.csproj">
+      <Project>{E7621461-2A46-4E5B-8189-BBA242D90955}</Project>
+      <Name>In.Cqrs</Name>
     </ProjectReference>
     <ProjectReference Include="..\SmartDotNet.Cqrs\SmartDotNet.Cqrs.csproj">
       <Project>{86E8DAF6-B3FA-46B0-8B47-7E348F795413}</Project>

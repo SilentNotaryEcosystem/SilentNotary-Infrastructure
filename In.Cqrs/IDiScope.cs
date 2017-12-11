@@ -1,4 +1,4 @@
-﻿namespace In.Di
+﻿namespace In.Cqrs
 {
     public interface IDiScope
     {

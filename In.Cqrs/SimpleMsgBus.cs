@@ -2,7 +2,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
-using In.Di;
 using Newtonsoft.Json.Linq;
 
 namespace In.Cqrs
