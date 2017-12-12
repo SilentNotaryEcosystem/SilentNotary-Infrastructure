@@ -48,7 +48,6 @@ namespace SmartDotNet.FunctionalCSharp
             var resultValues = resultArray.Select(r => r.Value);
             return await func(resultValues);
         }
-
         public static async Task<TOutput> OnTaskSuccess<TOutput>(this Task<Result> resulTask, Func<TOutput> func)
         {
             var result = await resulTask.ConfigureAwait(false);
@@ -56,5 +55,13 @@ namespace SmartDotNet.FunctionalCSharp
                 return func();
             return default(TOutput);
         }
+
+        public static Result<TOutput> OnBoth<TInput, TOutput>(this IEnumerable<Result<TInput>> results, Func<IEnumerable<TInput>, Result<TOutput>> func)
+        {
+            var resultArray = results.ToArray();
+            var resultValues = resultArray.Select(r => r.Value);
+            return func(resultValues);
+        }
+
     }
 }
