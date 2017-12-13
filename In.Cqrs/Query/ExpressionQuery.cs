@@ -1,10 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using In.Cqrs.Query.Criterion.Abstract;
 using In.Entity.Uow;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace In.Cqrs.Query
 {
+    [Obsolete("use specifications way")]
     public class ExpressionQuery
     {
         private readonly IDataSetUow _dataSetUow;
