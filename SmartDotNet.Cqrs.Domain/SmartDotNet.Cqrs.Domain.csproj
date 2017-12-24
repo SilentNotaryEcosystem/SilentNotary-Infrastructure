@@ -51,8 +51,10 @@
     <Compile Include="AggregateRoot.cs" />
     <Compile Include="DomainEntityBase.cs" />
     <Compile Include="EventDispatcher.cs" />
+    <Compile Include="Interfaces\IAggregateFactory.cs" />
     <Compile Include="Interfaces\IAggregateRoot.cs" />
     <Compile Include="Interfaces\IDddContext.cs" />
+    <Compile Include="Interfaces\IDddUnitOfWork.cs" />
     <Compile Include="Interfaces\IDomainEvent.cs" />
     <Compile Include="Interfaces\IEventDispatcher.cs" />
     <Compile Include="Interfaces\IEventHandler.cs" />
