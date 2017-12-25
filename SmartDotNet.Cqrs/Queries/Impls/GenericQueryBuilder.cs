@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using SmartDotNet.Cqrs.Domain.Interfaces;
-using SmartDotNet.Cqrs.Specifications;
+using SmartDotNet.Specifications;
 
 namespace SmartDotNet.Cqrs.Queries.Impls
 {

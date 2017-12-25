@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using SmartDotNet.Cqrs.Domain.Interfaces;
-using SmartDotNet.Cqrs.Specifications;
+using SmartDotNet.Specifications;
 using X.PagedList;
 
 namespace SmartDotNet.Cqrs.Queries

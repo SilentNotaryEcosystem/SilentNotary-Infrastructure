@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace SmartDotNet.Cqrs.Specifications.Helpers.ExpressionCombining
+namespace SmartDotNet.Specifications.Helpers.ExpressionCombining
 {
     // ------------------------------------------------------------------------------------------
     // This code was taken from the MSDN Blog meek: LINQ to Entities: Combining Predicates

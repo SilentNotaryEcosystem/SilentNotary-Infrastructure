@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace SmartDotNet.Cqrs.Specifications.Helpers
+namespace SmartDotNet.Specifications.Helpers
 {
     public class AdHocSpecification<T> : Specification<T>
     {

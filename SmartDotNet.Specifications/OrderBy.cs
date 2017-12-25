@@ -1,4 +1,4 @@
-﻿namespace SmartDotNet.Cqrs.Specifications
+﻿namespace SmartDotNet.Specifications
 {
     public enum OrderBy
     {

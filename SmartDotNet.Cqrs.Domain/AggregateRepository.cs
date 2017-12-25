@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
-using SmartDotNet.Cqrs.Specifications;
+using SmartDotNet.Specifications;
 
 namespace SmartDotNet.Cqrs.Domain
 {

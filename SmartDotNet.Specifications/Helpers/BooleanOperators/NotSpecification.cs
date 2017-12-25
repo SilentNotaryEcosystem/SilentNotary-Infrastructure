@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace SmartDotNet.Cqrs.Specifications.Helpers.BooleanOperators
+namespace SmartDotNet.Specifications.Helpers.BooleanOperators
 {
     internal class NotSpecification<T> : Specification<T>
     {

@@ -42,9 +42,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="SmartDotNet.Cqrs">
-      <HintPath>..\..\Nanny.Queries\bin\Debug\SmartDotNet.Cqrs.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -75,6 +72,10 @@
     <ProjectReference Include="..\SmartDotNet.FunctionalCSharp\SmartDotNet.FunctionalCSharp.csproj">
       <Project>{869857A4-CE3D-41AA-99D8-4670A79F10DE}</Project>
       <Name>SmartDotNet.FunctionalCSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartDotNet.Specifications\SmartDotNet.Specifications.csproj">
+      <Project>{B81CFC4D-D02A-4D28-A8D2-B48C69D86F68}</Project>
+      <Name>SmartDotNet.Specifications</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

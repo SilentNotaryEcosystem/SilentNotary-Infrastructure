@@ -141,14 +141,6 @@
     <Compile Include="Queries\IQueryBuilder.cs" />
     <Compile Include="Queries\IQueryFactory.cs" />
     <Compile Include="Queries\IQueryFor.cs" />
-    <Compile Include="Specifications\Helpers\AdHocSpecification.cs" />
-    <Compile Include="Specifications\Helpers\BooleanOperators\AndSpecification.cs" />
-    <Compile Include="Specifications\Helpers\BooleanOperators\NotSpecification.cs" />
-    <Compile Include="Specifications\Helpers\BooleanOperators\OrSpecification.cs" />
-    <Compile Include="Specifications\Helpers\ExpressionCombining\ParameterRebinder.cs" />
-    <Compile Include="Specifications\Helpers\ExpressionCombining\Utility.cs" />
-    <Compile Include="Specifications\OrderBy.cs" />
-    <Compile Include="Specifications\Specification.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -162,6 +154,10 @@
     <ProjectReference Include="..\SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj">
       <Project>{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}</Project>
       <Name>SmartDotNet.Cqrs.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartDotNet.Specifications\SmartDotNet.Specifications.csproj">
+      <Project>{B81CFC4D-D02A-4D28-A8D2-B48C69D86F68}</Project>
+      <Name>SmartDotNet.Specifications</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using SmartDotNet.Cqrs.Specifications.Helpers.ExpressionCombining;
+using SmartDotNet.Specifications.Helpers.ExpressionCombining;
 
-namespace SmartDotNet.Cqrs.Specifications.Helpers.BooleanOperators
+namespace SmartDotNet.Specifications.Helpers.BooleanOperators
 {
     internal class OrSpecification<T> : Specification<T>
     {

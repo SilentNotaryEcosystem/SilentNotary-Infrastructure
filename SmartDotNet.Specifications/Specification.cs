@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using SmartDotNet.Cqrs.Specifications.Helpers.BooleanOperators;
+using SmartDotNet.Specifications.Helpers.BooleanOperators;
 
-namespace SmartDotNet.Cqrs.Specifications
+namespace SmartDotNet.Specifications
 {
     public abstract class Specification<T>
     {
