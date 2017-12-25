@@ -5,7 +5,7 @@ using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace SmartDotNet.Cqrs.Domain
 {
-    public abstract class AggregateRoot<TId> : DomainEntityBase<TId>, IAggregateRoot
+    public abstract class Aggregate<TId> : DomainEntityBase<TId>, IAggregateRoot
     {
         private readonly IDictionary<Type, IDomainEvent> _events = new ConcurrentDictionary<Type, IDomainEvent>();
 

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using SmartDotNet.Cqrs.Domain;
 using SmartDotNet.Cqrs.Domain.Interfaces;
@@ -6,7 +7,7 @@ using SmartDotNet.Cqrs.Domain.Interfaces;
 namespace SmartDotNet.Cqrs.Commands
 {
     public abstract class CommandHandlerBase<TAggregate, TKey>
-        where TAggregate: AggregateRoot<TKey>
+        where TAggregate: Aggregate<TKey>
     {
         protected readonly IDddUnitOfWork UnitOfWork;
         protected readonly AggregateRepository<TAggregate, TKey> Repository;
@@ -17,10 +18,18 @@ namespace SmartDotNet.Cqrs.Commands
             Repository = UnitOfWork.Repository<TAggregate, TKey>();
         }
 
-        protected Task<Result> SaveChanges(TAggregate employee)
+        protected Task<Result> SaveChanges(TAggregate aggregate)
         {
-            Repository.Update(employee);
+            Repository.Update(aggregate);
             return UnitOfWork.CommitAsync();
+        }
+
+        protected Task<Result> SaveChanges(IEnumerable<TAggregate> aggregates)
+        {
+            foreach (var aggregate in aggregates)
+                Repository.Update(aggregate);
+            return UnitOfWork.CommitAsync();
+
         }
     }
 }

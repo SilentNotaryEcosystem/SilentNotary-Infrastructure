@@ -42,13 +42,16 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="SmartDotNet.Cqrs">
+      <HintPath>..\..\Nanny.Queries\bin\Debug\SmartDotNet.Cqrs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AggregateRepository.cs" />
-    <Compile Include="AggregateRoot.cs" />
+    <Compile Include="Aggregate.cs" />
     <Compile Include="DomainEntityBase.cs" />
     <Compile Include="EventDispatcher.cs" />
     <Compile Include="Interfaces\IAggregateFactory.cs" />
