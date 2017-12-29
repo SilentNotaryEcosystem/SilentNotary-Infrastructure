@@ -16,7 +16,10 @@ namespace SmartDotNet.Cqrs.Domain
 
         public abstract void Update(TAggregate aggregate);
 
-        public abstract Task<IEnumerable<TAggregate>> GetAll<TAggregateState>(Specification<TAggregateState> specification = null)
+        public abstract Task<bool> AnyAsync<TAggregateState>(Specification<TAggregateState> specification = null)
+            where TAggregateState : DomainEntityBase<TId>;
+
+        public abstract Task<IEnumerable<TAggregate>> GetAllAsync<TAggregateState>(Specification<TAggregateState> specification = null)
             where TAggregateState: DomainEntityBase<TId>;
 
         protected static Expression<Func<TDest, bool>> ConvertSpecification<TSrc, TDest>(Specification<TSrc> specification)
