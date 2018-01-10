@@ -53,6 +53,13 @@ namespace SmartDotNet.FunctionalCSharp
             return Result.Ok();
         }
 
+        public static Result NotDefaultValue(long value, string name)
+        {
+            if (value == default(long))
+                return Result.Fail($"parameter {name} should be not a default value ({value})");
+            return Result.Ok();
+        }
+
         public static Result NotDefaultValue(Guid value, string name)
         {
             if (value == Guid.Empty)
