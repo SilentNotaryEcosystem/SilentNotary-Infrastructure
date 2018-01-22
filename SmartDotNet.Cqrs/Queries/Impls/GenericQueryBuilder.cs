@@ -26,6 +26,13 @@ namespace SmartDotNet.Cqrs.Queries.Impls
             return new GenericQuery<TDest>(Queryable.ProjectTo<TDest>(_mapperConfiguration));
         }
 
+        public IGenericQuery<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
+            where TDest : class
+        {
+            var queryable = Queryable.Select(selector);
+            return new GenericQuery<TDest>(queryable.ProjectTo<TDest>(_mapperConfiguration));
+        }
+
         public IGenericQueryBuilder<TSource> Where(Specification<TSource> specification)
         {
             Queryable = Queryable.Where(specification);

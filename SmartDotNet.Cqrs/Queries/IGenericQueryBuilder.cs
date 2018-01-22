@@ -13,6 +13,9 @@ namespace SmartDotNet.Cqrs.Queries
         IGenericQuery<TDest> ProjectTo<TDest>()
             where TDest : class;
 
+        IGenericQuery<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
+            where TDest : class;
+
         IGenericQueryBuilder<TSource> Where(Specification<TSource> specification);
 
         IGenericQueryBuilder<TSource> OrderBy<TKey>(Expression<Func<TSource, TKey>> keySelector,
