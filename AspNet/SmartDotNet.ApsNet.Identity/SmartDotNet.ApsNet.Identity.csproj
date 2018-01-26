@@ -37,6 +37,8 @@
   <ItemGroup>
     <Compile Include="Interfaces\IClientApplication.cs" />
     <Compile Include="Interfaces\IClientApplicationStore.cs" />
+    <Compile Include="Interfaces\IExternalPreRegistration.cs" />
+    <Compile Include="Interfaces\IExternalPreRegistrationStore.cs" />
     <Compile Include="Interfaces\ITokenStore.cs" />
     <Compile Include="Interfaces\IUserToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
