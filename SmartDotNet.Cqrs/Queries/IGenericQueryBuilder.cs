@@ -13,8 +13,8 @@ namespace SmartDotNet.Cqrs.Queries
         IGenericQuery<TDest> ProjectTo<TDest>()
             where TDest : class;
 
-        IGenericQuery<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
-            where TDest : class;
+        IGenericQueryBuilder<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
+            where TDest : class, IHasKey;
 
         IGenericQueryBuilder<TSource> Where(Specification<TSource> specification);
 

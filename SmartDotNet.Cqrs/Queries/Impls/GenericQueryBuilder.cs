@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -14,6 +15,13 @@ namespace SmartDotNet.Cqrs.Queries.Impls
     {
         private readonly IConfigurationProvider _mapperConfiguration;
 
+        private GenericQueryBuilder(IQueryable<TSource> queryable, IConfigurationProvider mapperConfigurationProvider)
+            :base(queryable)
+        {
+            _mapperConfiguration = mapperConfigurationProvider;
+        }
+
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public GenericQueryBuilder(ILinqProvider linqProvider, IConfigurationProvider mapperConfigurationProvider)
             : base(linqProvider.Query<TSource>())
         {
@@ -26,11 +34,11 @@ namespace SmartDotNet.Cqrs.Queries.Impls
             return new GenericQuery<TDest>(Queryable.ProjectTo<TDest>(_mapperConfiguration));
         }
 
-        public IGenericQuery<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
-            where TDest : class
+        public IGenericQueryBuilder<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
+            where TDest : class, IHasKey
         {
             var queryable = Queryable.Select(selector);
-            return new GenericQuery<TDest>(queryable.ProjectTo<TDest>(_mapperConfiguration));
+            return new GenericQueryBuilder<TDest>(queryable, _mapperConfiguration);
         }
 
         public IGenericQueryBuilder<TSource> Where(Specification<TSource> specification)
