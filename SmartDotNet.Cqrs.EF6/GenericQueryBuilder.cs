@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using SmartDotNet.Cqrs.Domain.Interfaces;
+using SmartDotNet.Cqrs.Queries;
 using SmartDotNet.Specifications;
 
-namespace SmartDotNet.Cqrs.Queries.Impls
+namespace SmartDotNet.Cqrs.EF6
 {
     public class GenericQueryBuilder<TSource> : GenericQuery<TSource>, IGenericQueryBuilder<TSource> where TSource : class, IHasKey
     {

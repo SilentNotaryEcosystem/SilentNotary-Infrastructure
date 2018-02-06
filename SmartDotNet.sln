@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.Cqrs", "SmartDo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.Specifications", "SmartDotNet.Specifications\SmartDotNet.Specifications.csproj", "{B81CFC4D-D02A-4D28-A8D2-B48C69D86F68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDotNet.Cqrs.EF6", "SmartDotNet.Cqrs.EF6\SmartDotNet.Cqrs.EF6.csproj", "{9DE4E322-5D8E-443A-A730-E4251D0C8A83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{B81CFC4D-D02A-4D28-A8D2-B48C69D86F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B81CFC4D-D02A-4D28-A8D2-B48C69D86F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B81CFC4D-D02A-4D28-A8D2-B48C69D86F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DE4E322-5D8E-443A-A730-E4251D0C8A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DE4E322-5D8E-443A-A730-E4251D0C8A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DE4E322-5D8E-443A-A730-E4251D0C8A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DE4E322-5D8E-443A-A730-E4251D0C8A83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{DC8C92D9-7AFD-45EE-AB93-731A3549D6E0} = {F217E149-CC0C-4785-BC19-C188ED670595}
 		{8BE34B96-6ECD-4493-8C5D-194DE2887FA8} = {45837C26-F1B6-4F7F-8703-5D69D099F3F6}
 		{86E8DAF6-B3FA-46B0-8B47-7E348F795413} = {45837C26-F1B6-4F7F-8703-5D69D099F3F6}
+		{9DE4E322-5D8E-443A-A730-E4251D0C8A83} = {45837C26-F1B6-4F7F-8703-5D69D099F3F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B583C775-C088-4A08-B552-2CF73B475677}

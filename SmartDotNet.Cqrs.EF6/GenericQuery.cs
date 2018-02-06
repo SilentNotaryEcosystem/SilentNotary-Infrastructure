@@ -2,9 +2,10 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using SmartDotNet.Cqrs.Queries;
 using X.PagedList;
 
-namespace SmartDotNet.Cqrs.Queries.Impls
+namespace SmartDotNet.Cqrs.EF6
 {
     public class GenericQuery<TSource> : IGenericQuery<TSource>
         where TSource : class

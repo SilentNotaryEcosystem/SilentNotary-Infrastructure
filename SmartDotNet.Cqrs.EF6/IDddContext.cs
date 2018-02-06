@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 
-namespace SmartDotNet.Cqrs.Domain.Interfaces
+namespace SmartDotNet.Cqrs.EF6
 {
     public interface IDddContext : IDisposable
     {

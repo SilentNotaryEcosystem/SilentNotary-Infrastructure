@@ -35,8 +35,6 @@
     <Compile Include="Commands\CommandHandlerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\IGenericQuery.cs" />
-    <Compile Include="Queries\Impls\GenericQuery.cs" />
-    <Compile Include="Queries\Impls\GenericQueryBuilder.cs" />
     <Compile Include="Queries\IGenericQueryBuilder.cs" />
     <Compile Include="Queries\ILinqProvider.cs" />
     <Compile Include="Queries\Impls\QueryBuilder.cs" />
@@ -71,9 +69,6 @@
     </Reference>
     <Reference Include="CSharpFunctionalExtensions">
       <HintPath>..\packages\CSharpFunctionalExtensions.1.7.1\lib\netstandard1.0\CSharpFunctionalExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />

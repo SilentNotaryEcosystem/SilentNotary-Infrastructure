@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}</ProjectGuid>
+    <ProjectGuid>{9DE4E322-5D8E-443A-A730-E4251D0C8A83}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartDotNet.Cqrs.Domain</RootNamespace>
-    <AssemblyName>SmartDotNet.Cqrs.Domain</AssemblyName>
+    <RootNamespace>SmartDotNet.Cqrs.EF6</RootNamespace>
+    <AssemblyName>SmartDotNet.Cqrs.EF6</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,41 +30,53 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="CSharpFunctionalExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CSharpFunctionalExtensions.1.7.1\lib\netstandard1.0\CSharpFunctionalExtensions.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="X.PagedList, Version=7.2.2.0, Culture=neutral, PublicKeyToken=00b6c4f97602e5e8, processorArchitecture=MSIL">
+      <HintPath>..\packages\X.PagedList.7.2.2\lib\net461\X.PagedList.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AggregateRepository.cs" />
-    <Compile Include="Aggregate.cs" />
-    <Compile Include="DomainEntityBase.cs" />
-    <Compile Include="EventDispatcher.cs" />
-    <Compile Include="Interfaces\IAggregateFactory.cs" />
-    <Compile Include="Interfaces\IAggregateRoot.cs" />
-    <Compile Include="Interfaces\IDddUnitOfWork.cs" />
-    <Compile Include="Interfaces\IDomainEvent.cs" />
-    <Compile Include="Interfaces\IEventDispatcher.cs" />
-    <Compile Include="Interfaces\IEventHandler.cs" />
-    <Compile Include="Interfaces\IHasKey.cs" />
-    <Compile Include="Interfaces\IPersistableValueObject.cs" />
-    <Compile Include="Interfaces\IValueObjectProvider.cs" />
+    <Compile Include="GenericQuery.cs" />
+    <Compile Include="GenericQueryBuilder.cs" />
+    <Compile Include="IDddContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValueDataAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SmartDotNet.FunctionalCSharp\SmartDotNet.FunctionalCSharp.csproj">
-      <Project>{869857A4-CE3D-41AA-99D8-4670A79F10DE}</Project>
-      <Name>SmartDotNet.FunctionalCSharp</Name>
+    <ProjectReference Include="..\SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj">
+      <Project>{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}</Project>
+      <Name>SmartDotNet.Cqrs.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartDotNet.Cqrs\SmartDotNet.Cqrs.csproj">
+      <Project>{86E8DAF6-B3FA-46B0-8B47-7E348F795413}</Project>
+      <Name>SmartDotNet.Cqrs</Name>
     </ProjectReference>
     <ProjectReference Include="..\SmartDotNet.Specifications\SmartDotNet.Specifications.csproj">
       <Project>{B81CFC4D-D02A-4D28-A8D2-B48C69D86F68}</Project>
