@@ -1,4 +1,4 @@
-﻿namespace In.Cqrs.Enums
+﻿namespace In.Legacy.Enums
 {
     public enum DbAction
     {

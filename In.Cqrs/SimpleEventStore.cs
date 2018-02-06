@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using In.Cqrs.Events;
-using In.Cqrs.Exceptions;
+using In.Legacy.Enums.Events;
+using In.Legacy.Exceptions;
 
-namespace In.Cqrs
+namespace In.Legacy
 {
     public class SimpleEventStore : IEventStore
     {

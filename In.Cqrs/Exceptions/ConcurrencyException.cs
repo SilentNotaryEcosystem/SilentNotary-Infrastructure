@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace In.Cqrs.Exceptions
+namespace In.Legacy.Exceptions
 {
     public class ConcurrencyException : Exception
     {

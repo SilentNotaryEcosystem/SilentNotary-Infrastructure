@@ -1,4 +1,4 @@
-﻿namespace In.Cqrs.Query.Criterion.Abstract
+﻿namespace In.Legacy.Query.Criterion.Abstract
 {
     public interface IPagingCriterion : ICriterion
     {

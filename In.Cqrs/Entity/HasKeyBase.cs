@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
-namespace In.Entity
+namespace In.Legacy.Entity
 {
     public abstract class HasKeyBase<TId> : IHasKey<TId>
     {

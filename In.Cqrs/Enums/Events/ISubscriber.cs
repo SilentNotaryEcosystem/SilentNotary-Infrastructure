@@ -1,4 +1,4 @@
-namespace In.Cqrs.Events
+namespace In.Legacy.Enums.Events
 {
     public interface ISubscriber<in T>
     {

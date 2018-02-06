@@ -1,4 +1,4 @@
-﻿namespace In.Cqrs
+﻿namespace In.Legacy
 {
     public interface IMessageResult : IMessage
     {

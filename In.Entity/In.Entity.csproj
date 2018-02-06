@@ -42,21 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DefaultEntity.cs" />
-    <Compile Include="HasKeyBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrackableEntity.cs" />
-    <Compile Include="Uow\IAsyncCrudUow.cs" />
-    <Compile Include="Uow\IDataSetUow.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj">
       <Project>{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}</Project>
       <Name>SmartDotNet.Cqrs.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
-using In.Cqrs.Query.Criterion.Abstract;
+using In.Legacy.Query.Criterion.Abstract;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
-namespace In.Cqrs.Query.Criterion
+namespace In.Legacy.Query.Criterion
 {
     public class ByIdExpressionCriterion<T, TId> : IExpressionCriterion<T> where T : class, IHasKey<TId>
     {

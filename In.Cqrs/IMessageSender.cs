@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 
-namespace In.Cqrs
+namespace In.Legacy
 {
     public interface IMessageSender
     {

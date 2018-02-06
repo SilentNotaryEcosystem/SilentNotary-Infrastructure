@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace In.Cqrs
+namespace In.Legacy
 {
     public static class AsyncHelpers
     {

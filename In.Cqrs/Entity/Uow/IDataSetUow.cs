@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
-namespace In.Entity.Uow
+namespace In.Legacy.Entity.Uow
 {
     public interface IDataSetUow
     {

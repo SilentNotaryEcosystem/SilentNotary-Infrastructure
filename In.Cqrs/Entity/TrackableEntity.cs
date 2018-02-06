@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace In.Entity
+namespace In.Legacy.Entity
 {
     public abstract class TrackableEntity<TKey>: HasKeyBase<TKey>
     {

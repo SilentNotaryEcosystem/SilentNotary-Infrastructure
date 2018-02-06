@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace In.Cqrs.Events
+namespace In.Legacy.Enums.Events
 {
     internal struct EventDescriptor
     {

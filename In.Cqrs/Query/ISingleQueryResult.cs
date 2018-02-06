@@ -1,4 +1,4 @@
-﻿namespace In.Cqrs.Query
+﻿namespace In.Legacy.Query
 {
     public interface ISingleQueryResult<T>
     {

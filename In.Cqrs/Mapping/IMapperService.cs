@@ -1,4 +1,4 @@
-﻿namespace In.Mapping
+﻿namespace In.Legacy.Mapping
 {
     public interface IMapperService<out TDest, in TDto>
     {

@@ -1,6 +1,6 @@
-﻿using In.Cqrs.Query.Criterion.Abstract;
+﻿using In.Legacy.Query.Criterion.Abstract;
 
-namespace In.Cqrs.Query.Criterion
+namespace In.Legacy.Query.Criterion
 {
     public class GenericCriterion<T> : IGenericCriterion<T>
     {

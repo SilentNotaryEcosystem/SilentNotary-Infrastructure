@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace In.Cqrs
+namespace In.Legacy
 {
     public interface IEventStore
     {

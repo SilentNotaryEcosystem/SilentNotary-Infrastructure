@@ -1,7 +1,5 @@
 ﻿
-using In.Cqrs;
-
-namespace In.Mapping
+namespace In.Legacy.Mapping
 {
     public class MapperServiceFactory
     {

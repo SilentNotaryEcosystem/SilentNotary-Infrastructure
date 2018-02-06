@@ -1,4 +1,4 @@
-﻿using In.Cqrs.Query.Criterion.Abstract;
+﻿using In.Legacy.Query.Criterion.Abstract;
 
 namespace SmartDotNet.Cqrs.Queries
 {

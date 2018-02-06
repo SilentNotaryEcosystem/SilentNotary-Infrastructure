@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using In.Cqrs.Query.Criterion.Abstract;
-using In.Entity.Uow;
+using In.Legacy.Entity.Uow;
+using In.Legacy.Query.Criterion.Abstract;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
-namespace In.Cqrs.Query
+namespace In.Legacy.Query
 {
     [Obsolete("use specifications way")]
     public class ExpressionQuery

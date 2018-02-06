@@ -1,7 +1,7 @@
-﻿using In.Entity.Uow;
+﻿using In.Legacy.Entity.Uow;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
-namespace In.Cqrs.Command
+namespace In.Legacy.Command
 {
     public class DeleteCommandHandler<TEntity>
         where TEntity : class, IHasKey

@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using In.Cqrs.Command;
-using In.Cqrs.Query.Criterion.Abstract;
-using In.Cqrs.Query;
-using In.Entity.Uow;
+using In.Legacy.Command;
+using In.Legacy.Entity.Uow;
+using In.Legacy.Query;
+using In.Legacy.Query.Criterion.Abstract;
 using SmartDotNet.Cqrs.Domain.Interfaces;
 
-namespace In.Cqrs.Storage
+namespace In.Legacy.Storage
 {
     public class SimpleStorage<TEntity> : IStorage<TEntity> where TEntity : class, IHasKey
     {

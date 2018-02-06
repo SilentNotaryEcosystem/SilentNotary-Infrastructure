@@ -52,9 +52,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\In.Cqrs\In.Cqrs.csproj">
+    <ProjectReference Include="..\In.Cqrs\In.Legacy.csproj">
       <Project>{e7621461-2a46-4e5b-8189-bba242d90955}</Project>
-      <Name>In.Cqrs</Name>
+      <Name>In.Legacy</Name>
     </ProjectReference>
     <ProjectReference Include="..\SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj">
       <Project>{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}</Project>

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace In.Entity.Uow
+namespace In.Legacy.Entity.Uow
 {
     public interface IAsyncCrudUow<TEntity, in TKey>
     {

@@ -1,4 +1,4 @@
-﻿namespace In.Cqrs.Events.Impl
+﻿namespace In.Legacy.Enums.Events.Impl
 {
     public class SimpleSubscriber<T> : ISubscriber<T>
     {

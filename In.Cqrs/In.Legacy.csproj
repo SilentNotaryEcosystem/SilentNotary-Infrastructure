@@ -7,8 +7,8 @@
     <ProjectGuid>{E7621461-2A46-4E5B-8189-BBA242D90955}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>In.Cqrs</RootNamespace>
-    <AssemblyName>In.Cqrs</AssemblyName>
+    <RootNamespace>In.Legacy</RootNamespace>
+    <AssemblyName>In.Legacy</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -38,6 +38,7 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
@@ -47,8 +48,15 @@
     <Compile Include="AsyncHelpers.cs" />
     <Compile Include="Command\DeleteCommandHandler.cs" />
     <Compile Include="Command\SaveCommandHandler.cs" />
+    <Compile Include="Entity\DefaultEntity.cs" />
+    <Compile Include="Entity\HasKeyBase.cs" />
+    <Compile Include="Entity\TrackableEntity.cs" />
+    <Compile Include="Entity\Uow\IAsyncCrudUow.cs" />
+    <Compile Include="Entity\Uow\IDataSetUow.cs" />
     <Compile Include="IDiScope.cs" />
     <Compile Include="IMessageResult.cs" />
+    <Compile Include="Mapping\IMapperService.cs" />
+    <Compile Include="Mapping\MapperServiceFactory.cs" />
     <Compile Include="Query\Criterion\Abstract\IExpressionCriterion.cs" />
     <Compile Include="Query\Criterion\Abstract\IPagingCriterion.cs" />
     <Compile Include="Query\Criterion\CustomExpressionCriterion.cs" />
@@ -85,13 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Entity\app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\In.Entity\In.Entity.csproj">
-      <Project>{6464E77B-E6CF-49B9-B9DB-6F4C83DDD8F8}</Project>
-      <Name>In.Entity</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SmartDotNet.Cqrs.Domain\SmartDotNet.Cqrs.Domain.csproj">
       <Project>{8BE34B96-6ECD-4493-8C5D-194DE2887FA8}</Project>
       <Name>SmartDotNet.Cqrs.Domain</Name>

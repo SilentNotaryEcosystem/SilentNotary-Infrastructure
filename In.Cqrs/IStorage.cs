@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using In.Cqrs.Query.Criterion.Abstract;
+using In.Legacy.Query.Criterion.Abstract;
 
-namespace In.Cqrs
+namespace In.Legacy
 {
     public interface IStorage<T>
     {

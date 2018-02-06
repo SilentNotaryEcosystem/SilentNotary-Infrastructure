@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using Newtonsoft.Json.Linq;
 
-namespace In.Cqrs
+namespace In.Legacy
 {
     [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
     public class SimpleMsgBus : IMessageSender
