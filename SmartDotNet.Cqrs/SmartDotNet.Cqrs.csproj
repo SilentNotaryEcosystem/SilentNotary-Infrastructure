@@ -52,7 +52,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\In.Cqrs\In.Legacy.csproj">
+    <ProjectReference Include="..\In.Legacy\In.Legacy.csproj">
       <Project>{e7621461-2a46-4e5b-8189-bba242d90955}</Project>
       <Name>In.Legacy</Name>
     </ProjectReference>
