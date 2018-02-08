@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\AdHocSpecification.cs" />
     <Compile Include="Helpers\BooleanOperators\AndSpecification.cs" />
     <Compile Include="Helpers\BooleanOperators\NotSpecification.cs" />
     <Compile Include="Helpers\BooleanOperators\OrSpecification.cs" />
