@@ -12,7 +12,7 @@ namespace SmartDotNet.Specifications.Helpers.BooleanOperators
             _spec = spec ?? throw new ArgumentException(nameof(spec)); 
         }
 
-        internal override Expression<Func<T, bool>> ToExpression()
+        public override Expression<Func<T, bool>> ToExpression()
         {
             var expr = _spec.ToExpression();
             return Expression.Lambda<Func<T, bool>>(Expression.Not(expr.Body), expr.Parameters);

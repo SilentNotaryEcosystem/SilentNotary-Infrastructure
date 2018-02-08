@@ -12,7 +12,7 @@ namespace SmartDotNet.Specifications.Helpers
             _predicate = predicate ?? throw new ArgumentException(nameof(predicate));
         }
 
-        internal override Expression<Func<T, bool>> ToExpression()
+        public override Expression<Func<T, bool>> ToExpression()
         {
             return _predicate;
         }

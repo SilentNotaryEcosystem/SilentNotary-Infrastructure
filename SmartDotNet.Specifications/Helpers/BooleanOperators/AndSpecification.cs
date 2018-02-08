@@ -15,7 +15,7 @@ namespace SmartDotNet.Specifications.Helpers.BooleanOperators
             _spec2 = spec2 ?? throw new ArgumentException(nameof(spec2));
         }
 
-        internal override Expression<Func<T, bool>> ToExpression()
+        public override Expression<Func<T, bool>> ToExpression()
         {
             var expr1 = _spec1.ToExpression();
             var expr2 = _spec2.ToExpression();

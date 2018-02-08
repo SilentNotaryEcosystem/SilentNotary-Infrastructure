@@ -6,7 +6,7 @@ namespace SmartDotNet.Specifications
 {
     public abstract class Specification<T>
     {
-        internal abstract Expression<Func<T, bool>> ToExpression();
+        public abstract Expression<Func<T, bool>> ToExpression();
 
         public static implicit operator Expression<Func<T, bool>>(Specification<T> spec)
         {
