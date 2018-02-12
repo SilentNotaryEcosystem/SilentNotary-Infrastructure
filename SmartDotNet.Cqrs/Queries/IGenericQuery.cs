@@ -5,7 +5,6 @@ using X.PagedList;
 namespace SmartDotNet.Cqrs.Queries
 {
     public interface IGenericQuery<T>
-        where T: class
     {
         Task<T> FirstOrDefaultAsync();
 

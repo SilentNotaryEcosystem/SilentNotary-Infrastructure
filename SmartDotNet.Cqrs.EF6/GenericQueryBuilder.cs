@@ -35,11 +35,16 @@ namespace SmartDotNet.Cqrs.EF6
             return new GenericQuery<TDest>(Queryable.ProjectTo<TDest>(_mapperConfiguration));
         }
 
-        public IGenericQueryBuilder<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
+        public IGenericQueryBuilder<TDest> SwitchEntity<TDest>(Expression<Func<TSource, TDest>> switchExpression)
             where TDest : class, IHasKey
         {
-            var queryable = Queryable.Select(selector);
+            var queryable = Queryable.Select(switchExpression);
             return new GenericQueryBuilder<TDest>(queryable, _mapperConfiguration);
+        }
+
+        public IGenericQuery<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
+        {
+            throw new NotImplementedException();
         }
 
         public IGenericQueryBuilder<TSource> Where(Specification<TSource> specification)
