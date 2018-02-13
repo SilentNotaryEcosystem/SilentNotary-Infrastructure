@@ -44,7 +44,8 @@ namespace SmartDotNet.Cqrs.EF6
 
         public IGenericQuery<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector)
         {
-            throw new NotImplementedException();
+            var queryable = Queryable.Select(selector);
+            return new GenericQuery<TDest>(queryable);
         }
 
         public IGenericQueryBuilder<TSource> Where(Specification<TSource> specification)

@@ -8,7 +8,6 @@ using X.PagedList;
 namespace SmartDotNet.Cqrs.EF6
 {
     public class GenericQuery<TSource> : IGenericQuery<TSource>
-        where TSource : class
     {
         protected IQueryable<TSource> Queryable;
 
