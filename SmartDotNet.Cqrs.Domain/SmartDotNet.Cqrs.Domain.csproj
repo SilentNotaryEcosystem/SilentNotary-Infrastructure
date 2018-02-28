@@ -52,6 +52,8 @@
     <Compile Include="Interfaces\IEventDispatcher.cs" />
     <Compile Include="Interfaces\IEventHandler.cs" />
     <Compile Include="Interfaces\IHasKey.cs" />
+    <Compile Include="Interfaces\IIntegrationEvent.cs" />
+    <Compile Include="Interfaces\IIntegrationEventHandler.cs" />
     <Compile Include="Interfaces\IPersistableValueObject.cs" />
     <Compile Include="Interfaces\IValueObjectProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using Newtonsoft.Json.Linq;
+using SmartDotNet.Cqrs.Domain.Interfaces;
 
 namespace In.Legacy
 {
@@ -62,6 +65,17 @@ namespace In.Legacy
             finally
             {
                 SaveCommand(messageResult);
+            }
+        }
+
+        public async Task PublishAsync<TEvent>(TEvent @event)
+            where TEvent : IIntegrationEvent
+        {
+            var handlers = _diScope.Resolve<IEnumerable<IIntegrationEventHandler<TEvent>>>().ToArray();
+            
+            foreach (var handler in handlers)
+            {
+                await handler.Handle(@event);
             }
         }
 
