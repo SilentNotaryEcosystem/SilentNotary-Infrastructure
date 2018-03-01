@@ -15,7 +15,7 @@ namespace SmartDotNet.Cqrs.Commands
     {
         protected readonly IDddUnitOfWork UnitOfWork;
         protected readonly AggregateRepository<TAggregate, TKey> Repository;
-        protected readonly IMessageSender _messageSender;
+        private readonly IMessageSender _messageSender;
 
         public CommandHandlerBase(IDddUnitOfWork unitOfWork, IMessageSender messageSender)
         {
@@ -35,7 +35,12 @@ namespace SmartDotNet.Cqrs.Commands
         {
             Repository.Update(aggregate);
             return UnitOfWork.CommitAsync()
-                .OnSuccess(async () => await PublishIntegrationEvents(aggregate.DomainEvents));
+                .OnSuccess(async () =>
+                {
+                    var events = aggregate.CommitedDomainEvents;
+                    aggregate.ClearCommitedEvents();
+                    await PublishIntegrationEvents(events);
+                });
         }
 
         /// <summary>
@@ -51,7 +56,12 @@ namespace SmartDotNet.Cqrs.Commands
                 Repository.Update(aggregate);
             return UnitOfWork.CommitAsync()
                 .OnSuccess(async () => await PublishIntegrationEvents(
-                    aggregateArray.SelectMany(aggregate => aggregate.DomainEvents)));
+                    aggregateArray.SelectMany(aggregate =>
+                    {
+                        var events = aggregate.CommitedDomainEvents.ToArray();
+                        aggregate.ClearCommitedEvents();
+                        return events;
+                    })));
         }
 
         /// <summary>
@@ -71,7 +81,7 @@ namespace SmartDotNet.Cqrs.Commands
                     .GetType()
                     .GetRuntimeMethods()
                     .First(x => x.Name == nameof(IMessageSender.PublishAsync));
-                await (Task)publishMethod
+                await (Task) publishMethod
                     .MakeGenericMethod(@event.GetType())
                     .Invoke(_messageSender, new object[] { @event });
             }
