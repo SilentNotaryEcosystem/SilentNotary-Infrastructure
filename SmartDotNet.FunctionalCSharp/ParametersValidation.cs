@@ -74,6 +74,13 @@ namespace SmartDotNet.FunctionalCSharp
             return Result.Ok();
         }
 
+        public static Result NotDefaultValue(decimal value, string name)
+        {
+            if (value == default(decimal))
+                return Result.Fail($"parameter {name} should be not a default value ({value})");
+            return Result.Ok();
+        }
+
         public static Result GreaterOrEqual(Int32 value, Int32 valueToCompare, string name)
         {
             if (value < valueToCompare)
