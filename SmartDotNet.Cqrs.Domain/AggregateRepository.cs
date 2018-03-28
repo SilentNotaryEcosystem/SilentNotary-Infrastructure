@@ -12,8 +12,6 @@ namespace SmartDotNet.Cqrs.Domain
     {
         public abstract Task<Result<TAggregate>> GetByIdAsync(TId id);
 
-        public abstract Task<Result<TAggregate>> GetBySpecification<TAggregateState>(Specification<TAggregateState> specification = null);
-
         public abstract void Add(TAggregate aggregate);
 
         public abstract void Update(TAggregate aggregate);
