@@ -18,6 +18,8 @@ namespace SmartDotNet.Cqrs.Domain
 
         public abstract void Update(TAggregate aggregate);
 
+        public abstract Task<Result<TAggregate>> GetSingleAsync<TAggregateState>(Specification<TAggregateState> specification = null);
+
         public abstract Task<bool> AnyAsync<TAggregateState>(Specification<TAggregateState> specification = null)
             where TAggregateState : DomainEntityBase<TId>;
 
