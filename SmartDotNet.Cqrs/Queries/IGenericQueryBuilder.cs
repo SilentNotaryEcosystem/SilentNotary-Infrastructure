@@ -8,39 +8,42 @@ using X.PagedList;
 
 namespace SmartDotNet.Cqrs.Queries
 {
-    public interface IGenericQueryBuilder<TSource> where TSource : class, IHasKey
-    {
-        IGenericQuery<TDest> ProjectTo<TDest>()
-            where TDest : class;
+	public interface IGenericQueryBuilder<TSource> where TSource : class, IHasKey
+	{
+		IGenericQuery<TDest> ProjectTo<TDest>()
+			where TDest : class;
 
-        /// <summary>
-        /// Switches query building to another source entity specified by <paramref name="switchExpression"/>
-        /// </summary>
-        /// <typeparam name="TDest">The type of destination entity to switch to</typeparam>
-        /// <param name="switchExpression">Expression specifying how to access destination entity from 
-        /// current qouery source entity</param>
-        /// <returns></returns>
-        IGenericQueryBuilder<TDest> SwitchEntity<TDest>(Expression<Func<TSource, TDest>> switchExpression)
-            where TDest : class, IHasKey;
+		/// <summary>
+		/// Switches query building to another source entity specified by <paramref name="switchExpression"/>
+		/// </summary>
+		/// <typeparam name="TDest">The type of destination entity to switch to</typeparam>
+		/// <param name="switchExpression">Expression specifying how to access destination entity from 
+		/// current qouery source entity</param>
+		/// <returns></returns>
+		IGenericQueryBuilder<TDest> SwitchEntity<TDest>(Expression<Func<TSource, TDest>> switchExpression)
+			where TDest : class, IHasKey;
 
-        /// <summary>
-        /// Selects the final query target.
-        /// </summary>
-        /// <typeparam name="TDest">The type of final query target</typeparam>
-        /// <param name="selector"></param>
-        /// <returns></returns>
-        IGenericQuery<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector);
+		/// <summary>
+		/// Selects the final query target.
+		/// </summary>
+		/// <typeparam name="TDest">The type of final query target</typeparam>
+		/// <param name="selector"></param>
+		/// <returns></returns>
+		IGenericQuery<TDest> Select<TDest>(Expression<Func<TSource, TDest>> selector);
 
-        IGenericQueryBuilder<TSource> Where(Specification<TSource> specification);
+		IGenericQueryBuilder<TSource> Where(Specification<TSource> specification);
 
-        IGenericQueryBuilder<TSource> OrderBy<TKey>(Expression<Func<TSource, TKey>> keySelector,
-            bool descending = false);
+		IGenericQueryBuilder<TSource> OrderBy<TKey>(Expression<Func<TSource, TKey>> keySelector,
+			bool descending = false);
 
-        Task<int> CountAsync();
-        Task<TSource> MinAsync();
-        Task<TSource> MaxAsync();
-        Task<TSource> FirstOrDefaultAsync();
-        Task<IEnumerable<TSource>> AllAsync();
-        Task<IPagedList<TSource>> PagedAsync(int pageNumber, int pageSize);
-    }
+		IGenericQueryBuilder<TSource> ThenBy<TKey>(Expression<Func<TSource, TKey>> keySelector,
+			bool descending = false);
+
+		Task<int> CountAsync();
+		Task<TSource> MinAsync();
+		Task<TSource> MaxAsync();
+		Task<TSource> FirstOrDefaultAsync();
+		Task<IEnumerable<TSource>> AllAsync();
+		Task<IPagedList<TSource>> PagedAsync(int pageNumber, int pageSize);
+	}
 }
