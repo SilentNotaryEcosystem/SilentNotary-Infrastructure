@@ -39,6 +39,9 @@ namespace SmartDotNet.Cqrs.Queries
 		IGenericQueryBuilder<TSource> ThenBy<TKey>(Expression<Func<TSource, TKey>> keySelector,
 			bool descending = false);
 
+		IGenericQueryBuilder<TResult> OfType<TResult>(Specification<TSource> specification)
+			where TResult : class, TSource;
+
 		Task<int> CountAsync();
 		Task<TSource> MinAsync();
 		Task<TSource> MaxAsync();

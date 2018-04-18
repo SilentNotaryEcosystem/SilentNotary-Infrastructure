@@ -70,6 +70,13 @@ namespace SmartDotNet.Cqrs.EF6
 			return this;
 		}
 
+		public IGenericQueryBuilder<TResult> OfType<TResult>(Specification<TSource> specification)
+			where TResult : class, TSource
+		{
+			var queryable = Queryable.OfType<TResult>();
+			return new GenericQueryBuilder<TResult>(queryable, _mapperConfiguration);
+		}
+
 		public async Task<int> CountAsync()
 		{
 			return await Queryable.CountAsync();
