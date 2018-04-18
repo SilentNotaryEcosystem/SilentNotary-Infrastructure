@@ -70,7 +70,7 @@ namespace SmartDotNet.Cqrs.EF6
 			return this;
 		}
 
-		public IGenericQueryBuilder<TResult> OfType<TResult>(Specification<TSource> specification)
+		public IGenericQueryBuilder<TResult> OfType<TResult>()
 			where TResult : class, TSource
 		{
 			var queryable = Queryable.OfType<TResult>();
