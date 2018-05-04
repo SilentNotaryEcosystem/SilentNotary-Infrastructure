@@ -4,7 +4,7 @@ using SmartDotNet.Specifications;
 
 namespace SmartDotNet.Cqrs
 {
-    public class GenericSpecification<T> : Specification<T>
+    internal class GenericSpecification<T> : Specification<T>
     {
         private readonly Expression<Func<T, bool>> _predicate;
 
