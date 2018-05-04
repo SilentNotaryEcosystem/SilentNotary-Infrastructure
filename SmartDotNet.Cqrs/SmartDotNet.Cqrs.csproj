@@ -33,6 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\CommandHandlerBase.cs" />
+    <Compile Include="GenericSpecification.cs" />
+    <Compile Include="GenericSpecifications.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\IGenericQuery.cs" />
     <Compile Include="Queries\IGenericQueryBuilder.cs" />
