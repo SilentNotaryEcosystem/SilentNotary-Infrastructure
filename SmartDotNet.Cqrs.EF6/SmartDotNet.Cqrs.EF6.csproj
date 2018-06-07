@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="GenericQuery.cs" />
     <Compile Include="GenericQueryBuilder.cs" />
-    <Compile Include="IDddContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

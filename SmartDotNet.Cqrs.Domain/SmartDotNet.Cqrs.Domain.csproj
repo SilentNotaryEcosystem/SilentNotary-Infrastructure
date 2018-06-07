@@ -47,7 +47,6 @@
     <Compile Include="EventDispatcher.cs" />
     <Compile Include="Interfaces\IAggregateFactory.cs" />
     <Compile Include="Interfaces\IAggregateRoot.cs" />
-    <Compile Include="Interfaces\IAggregateState.cs" />
     <Compile Include="Interfaces\IDddUnitOfWork.cs" />
     <Compile Include="Interfaces\IDomainEvent.cs" />
     <Compile Include="Interfaces\IEventDispatcher.cs" />
