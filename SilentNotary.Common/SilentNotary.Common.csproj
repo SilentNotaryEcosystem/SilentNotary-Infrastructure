@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SilentNotary.Cqrs.Domain.csproj\SilentNotary.Cqrs.Domain.csproj" />
+    <ProjectReference Include="..\SilentNotary.Cqrs.Domain\SilentNotary.Cqrs.Domain.csproj" />
   </ItemGroup>
 
 </Project>

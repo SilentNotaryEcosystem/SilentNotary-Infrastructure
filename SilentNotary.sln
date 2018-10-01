@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Specifications", "SilentNotary.Specifications\SilentNotary.Specifications.csproj", "{853DC6EA-387F-4C42-89C7-C0DB3B7E7CA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.FunctionalCSharp", "SilentNotary.FunctionalCSharp\SilentNotary.FunctionalCSharp.csproj", "{61215799-3978-4C19-9471-E104CF322590}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Cqrs.Domain", "SilentNotary.Cqrs.Domain\SilentNotary.Cqrs.Domain.csproj", "{9FB01A63-06FE-4B3A-863A-A065BA949D21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Common", "SilentNotary.Common\SilentNotary.Common.csproj", "{A47915F4-EA4A-41B0-9E11-62AF3BE7A2AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Cqrs", "SilentNotary.Cqrs\SilentNotary.Cqrs.csproj", "{048CF3E1-659F-4896-92D0-B3961B64EF5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Cqrs.EF6", "SilentNotary.Cqrs.EF6\SilentNotary.Cqrs.EF6.csproj", "{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{853DC6EA-387F-4C42-89C7-C0DB3B7E7CA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{853DC6EA-387F-4C42-89C7-C0DB3B7E7CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{853DC6EA-387F-4C42-89C7-C0DB3B7E7CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{853DC6EA-387F-4C42-89C7-C0DB3B7E7CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61215799-3978-4C19-9471-E104CF322590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61215799-3978-4C19-9471-E104CF322590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61215799-3978-4C19-9471-E104CF322590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61215799-3978-4C19-9471-E104CF322590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB01A63-06FE-4B3A-863A-A065BA949D21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB01A63-06FE-4B3A-863A-A065BA949D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB01A63-06FE-4B3A-863A-A065BA949D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB01A63-06FE-4B3A-863A-A065BA949D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47915F4-EA4A-41B0-9E11-62AF3BE7A2AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47915F4-EA4A-41B0-9E11-62AF3BE7A2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47915F4-EA4A-41B0-9E11-62AF3BE7A2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47915F4-EA4A-41B0-9E11-62AF3BE7A2AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048CF3E1-659F-4896-92D0-B3961B64EF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048CF3E1-659F-4896-92D0-B3961B64EF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048CF3E1-659F-4896-92D0-B3961B64EF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048CF3E1-659F-4896-92D0-B3961B64EF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B583C775-C088-4A08-B552-2CF73B475677}
+	EndGlobalSection
+EndGlobal

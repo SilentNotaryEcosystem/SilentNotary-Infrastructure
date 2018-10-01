@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SilentNotary.Common\SilentNotary.Common.csproj" />
-    <ProjectReference Include="..\SilentNotary.Cqrs.Domain.csproj\SilentNotary.Cqrs.Domain.csproj" />
     <ProjectReference Include="..\SilentNotary.Specifications\SilentNotary.Specifications.csproj" />
   </ItemGroup>
 

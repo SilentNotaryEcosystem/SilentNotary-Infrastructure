@@ -1,24 +1,17 @@
-﻿using SilentNotary.EF6.Configuration.Extensions;
-using SilentNotary.EF6.Configuration.Interfaces;
-using System.Data.Entity;
+﻿using SilentNotary.EF6.Configuration.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace SilentNotary.EF6.Configuration
 {
     public class ConfigurableDbContext : DbContext
     {
         private readonly IEntityTypeConfigurationProvider _provider;
+        protected string ConnectionString { get; set; }
 
-        protected ConfigurableDbContext(IEntityTypeConfigurationProvider configurationProvider, string connStringName)
-            : base(connStringName)
+        protected ConfigurableDbContext(IEntityTypeConfigurationProvider configurationProvider, string connString)
         {
             _provider = configurationProvider;
+            ConnectionString = connString;
         }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            DbModelBuilderExtensions.AddExplicitConfigurations(modelBuilder, _provider);
-            base.OnModelCreating(modelBuilder);
-        }
-
     }
 }

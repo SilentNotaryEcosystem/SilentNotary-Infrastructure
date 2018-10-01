@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Data.Entity;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Microsoft.EntityFrameworkCore;
 using SilentNotary.Cqrs.Domain.Interfaces;
 using SilentNotary.Cqrs.Queries;
 using SilentNotary.Specifications;

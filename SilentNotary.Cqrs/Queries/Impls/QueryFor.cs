@@ -5,7 +5,7 @@ using SilentNotary.Common.Query.Criterion.Abstract;
 namespace SilentNotary.Cqrs.Queries.Impls
 {
     /// <summary>
-    ///     Стандартная реализация <see cref="SmartDotNet.Cqrs.Queries.IQueryFor{T}" />
+    ///     Стандартная реализация <see cref="SilentNotary.Cqrs.Queries.IQueryFor{T}" />
     /// </summary>
     /// <typeparam name="TResult">Результат возвращаемый запросом</typeparam>
     public class QueryFor<TResult> : IQueryFor<TResult>
