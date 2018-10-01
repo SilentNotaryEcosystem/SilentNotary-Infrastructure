@@ -1,0 +1,11 @@
+﻿namespace SilentNotary.Cqrs.Domain.Interfaces
+{
+    public interface IHasKey
+    {
+    }
+
+    public interface IHasKey<out TId> : IHasKey
+    {
+        TId Id { get; }
+    }
+}
