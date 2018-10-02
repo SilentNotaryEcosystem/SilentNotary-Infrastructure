@@ -3,7 +3,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Authors>SilentNotary Team</Authors>
     <Company>SilentNotary</Company>
-    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilenNotary.Infrastructure.Common</PackageId>
     <Version>0.0.2</Version>
   </PropertyGroup>
