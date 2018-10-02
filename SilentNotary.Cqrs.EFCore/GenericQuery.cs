@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using SilentNotary.Cqrs.Queries;
 using X.PagedList;
 
-namespace SilentNotary.Cqrs.EF6
+namespace SilentNotary.Cqrs.EFCore
 {
     public class GenericQuery<TSource> : IGenericQuery<TSource>
     {

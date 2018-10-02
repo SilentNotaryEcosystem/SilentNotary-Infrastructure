@@ -10,7 +10,7 @@ using SilentNotary.Cqrs.Domain.Interfaces;
 using SilentNotary.Cqrs.Queries;
 using SilentNotary.Specifications;
 
-namespace SilentNotary.Cqrs.EF6
+namespace SilentNotary.Cqrs.EFCore
 {
 	public class GenericQueryBuilder<TSource> : GenericQuery<TSource>, IGenericQueryBuilder<TSource>
 		where TSource : class, IHasKey
