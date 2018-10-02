@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-     <Authors>SilentNotary Team</Authors>
+    <Authors>SilentNotary Team</Authors>
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilenNotary.Infrastructure.Cqrs.EF6</PackageId>
