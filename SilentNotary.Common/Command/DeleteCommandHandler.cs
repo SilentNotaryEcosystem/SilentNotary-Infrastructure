@@ -22,7 +22,7 @@ namespace SilentNotary.Common.Command
             //    throw new ArgumentException($"Entity {typeof(TEntity).Name} with id={message.GetId()} doesn't exists");
             //}
 
-            _dataSetUow.Remove(message);
+            _dataSetUow.RemoveEntity(message);
             
             return string.Empty;
         }

@@ -1,22 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Authors>SilentNotary Team</Authors>
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilenNotary.Infrastructure.Common</PackageId>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="SilenNotary.Infrastructure.Cqrs.Domain" Version="0.0.1" />
     <PackageReference Include="X.PagedList" Version="7.6.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SilentNotary.Cqrs.Domain\SilentNotary.Cqrs.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

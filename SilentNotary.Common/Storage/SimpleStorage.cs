@@ -27,13 +27,13 @@ namespace SilentNotary.Common.Storage
         {
             return _diScope
                 .Resolve<IDataSetUow>()
-                .Query<TEntity>();
+                .GetQuery<TEntity>();
         }
 
         public void Add(TEntity data)
         {
             var dataSetUow = _diScope.Resolve<IDataSetUow>();
-            dataSetUow.Add(data);
+            dataSetUow.AddEntity(data);
         }
 
         public async Task Save(params TEntity[] messages)

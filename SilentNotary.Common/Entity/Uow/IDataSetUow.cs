@@ -9,7 +9,7 @@ namespace SilentNotary.Common.Entity.Uow
 {
     public interface IDataSetUow
     {
-        IQueryable<T> Query<T>() where T : class, IHasKey;
+        IQueryable<T> GetQuery<T>() where T : class, IHasKey;
         IQueryable Query(Type type);
         IQueryable<T> Include<T, TProp>(IQueryable<T> queryable, params Expression<Func<T, TProp>>[] paths) where T : class;
         object GetContext();
@@ -18,9 +18,9 @@ namespace SilentNotary.Common.Entity.Uow
 
 
         /* CRUD */
-        void Add<T>(T entity) where T : class;
+        void AddEntity<T>(T entity) where T : class;
         void AddRange<T>(IEnumerable<T> entity) where T : class;
-        void Remove<T>(T entity) where T : class;
+        void RemoveEntity<T>(T entity) where T : class;
         void RemoveRange<T>(IEnumerable<T> entity) where T : class;
         int Commit();
         Task<int> CommitAsync();

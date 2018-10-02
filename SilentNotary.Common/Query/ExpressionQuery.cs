@@ -19,7 +19,7 @@ namespace SilentNotary.Common.Query
         public IQueryable<T> Ask<T>(IExpressionCriterion<T> criterion) where T : class, IHasKey
         {
             return _dataSetUow
-                .Query<T>()
+                .GetQuery<T>()
                 .Where(criterion.Get());
         }
     }
