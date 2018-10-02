@@ -6,7 +6,7 @@
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilenNotary.Infrastructure.FunctionalCSharp</PackageId>
-    <Version>0.0.1</Version>
+    <Version>0.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
