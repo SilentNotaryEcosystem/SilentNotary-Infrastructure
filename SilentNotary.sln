@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Common", "Sile
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Cqrs", "SilentNotary.Cqrs\SilentNotary.Cqrs.csproj", "{048CF3E1-659F-4896-92D0-B3961B64EF5C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Cqrs.EF6", "SilentNotary.Cqrs.EF6\SilentNotary.Cqrs.EF6.csproj", "{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentNotary.Cqrs.EFCore", "SilentNotary.Cqrs.EFCore\SilentNotary.Cqrs.EFCore.csproj", "{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{048CF3E1-659F-4896-92D0-B3961B64EF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{048CF3E1-659F-4896-92D0-B3961B64EF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{048CF3E1-659F-4896-92D0-B3961B64EF5C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DC7EFE0-9020-4F44-88B6-22F8BF64C663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
