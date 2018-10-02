@@ -1,6 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>SilentNotary Team</Authors>
+    <Company>SilentNotary</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>SilenNotary.Infrastructure.EF6</PackageId>
+    <Version>0.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.3" />
