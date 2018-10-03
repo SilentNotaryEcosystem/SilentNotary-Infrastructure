@@ -17,7 +17,7 @@ namespace SilentNotary.Cqrs.Queries
         /// <returns>
         ///     <see cref="IQueryable{TEntity}" /> object for type of TEntity
         /// </returns>
-        IQueryable<TEntity> Query<TEntity>()
+        IQueryable<TEntity> GetQuery<TEntity>()
             where TEntity : class, IHasKey;
     }
 }
