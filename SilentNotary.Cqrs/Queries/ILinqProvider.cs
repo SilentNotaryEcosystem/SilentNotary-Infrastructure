@@ -19,7 +19,5 @@ namespace SilentNotary.Cqrs.Queries
         /// </returns>
         IQueryable<TEntity> Query<TEntity>()
             where TEntity : class, IHasKey;
-
-        IQueryable Query(Type type);
     }
 }
