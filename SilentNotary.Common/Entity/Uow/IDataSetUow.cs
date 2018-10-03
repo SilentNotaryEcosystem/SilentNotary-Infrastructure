@@ -10,7 +10,6 @@ namespace SilentNotary.Common.Entity.Uow
     public interface IDataSetUow
     {
         IQueryable<T> GetQuery<T>() where T : class, IHasKey;
-        IQueryable Query(Type type);
         IQueryable<T> Include<T, TProp>(IQueryable<T> queryable, params Expression<Func<T, TProp>>[] paths) where T : class;
         object GetContext();
         TEntity Find<TEntity>(object id) where TEntity : class;

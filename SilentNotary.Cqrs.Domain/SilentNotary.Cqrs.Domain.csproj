@@ -5,11 +5,11 @@
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilenNotary.Infrastructure.Cqrs.Domain</PackageId>
-    <Version>0.0.3</Version>
+    <Version>0.0.4</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
-    <PackageReference Include="SilenNotary.Infrastructure.FunctionalCSharp" Version="[0.0.1,0.0.3]" />
-    <PackageReference Include="SilenNotary.Infrastructure.Specifications" Version="[0.0.1,0.0.3]" />
+    <PackageReference Include="SilenNotary.Infrastructure.FunctionalCSharp" Version="[0.0.3,0.0.4]" />
+    <PackageReference Include="SilenNotary.Infrastructure.Specifications" Version="[0.0.3,0.0.4]" />
   </ItemGroup>
 </Project>
