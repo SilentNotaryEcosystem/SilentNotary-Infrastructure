@@ -5,7 +5,7 @@
     <Authors>SilentNotary Team</Authors>
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>SilenNotary.Infrastructure.Specifications</PackageId>
+    <PackageId>SilentNotary.Infrastructure.Specifications</PackageId>
     <Version>0.0.6</Version>
   </PropertyGroup>
 
