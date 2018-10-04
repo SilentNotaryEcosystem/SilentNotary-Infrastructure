@@ -4,7 +4,7 @@
     <Authors>SilentNotary Team</Authors>
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>SilenNotary.Infrastructure.EF6</PackageId>
+    <PackageId>SilentNotary.Infrastructure.EF6</PackageId>
     <Version>0.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
