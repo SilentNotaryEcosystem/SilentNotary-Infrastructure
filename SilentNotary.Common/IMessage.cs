@@ -1,6 +1,8 @@
-﻿namespace SilentNotary.Common
+﻿using SilentNotary.Cqrs.Domain.Interfaces;
+
+namespace SilentNotary.Common
 {
-    public interface IMessage
+    public interface IMessage : IHasKey
     {
     }
 }
