@@ -25,7 +25,7 @@ namespace SilentNotary.Cqrs.EFCore
 
 		[SuppressMessage("ReSharper", "UnusedMember.Global")]
 		public GenericQueryBuilder(ILinqProvider linqProvider, IConfigurationProvider mapperConfigurationProvider)
-			: base(linqProvider.Query<TSource>())
+			: base(linqProvider.GetQuery<TSource>())
 		{
 			_mapperConfiguration = mapperConfigurationProvider;
 		}
