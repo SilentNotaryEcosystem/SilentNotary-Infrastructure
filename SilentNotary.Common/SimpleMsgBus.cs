@@ -43,7 +43,7 @@ namespace SilentNotary.Common
             }
             finally
             {
-                SaveCommand(messageResult);
+                await SaveCommand(messageResult);
             }
         }
 
@@ -64,7 +64,7 @@ namespace SilentNotary.Common
             }
             finally
             {
-                SaveCommand(messageResult);
+                await SaveCommand(messageResult);
             }
         }
 
@@ -79,10 +79,10 @@ namespace SilentNotary.Common
             }
         }
 
-        private void SaveCommand(IMessageResult msgResult)
+        private Task SaveCommand(IMessageResult msgResult)
         {
             _storage.Add(msgResult);
-            _storage.Save(msgResult);
+            return _storage.Save(msgResult);
         }
 
         private IMessageResult GetLogModel(IMessage command)
