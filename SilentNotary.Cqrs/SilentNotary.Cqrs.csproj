@@ -6,10 +6,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilentNotary.Infrastructure.Cqrs</PackageId>
     <PackageId>SilentNotary.Infrastructure.Cqrs</PackageId>
-    <Version>0.0.7</Version>
+    <Version>0.0.8</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
-    <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.7" />
+    <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.8" />
   </ItemGroup>
 </Project>
