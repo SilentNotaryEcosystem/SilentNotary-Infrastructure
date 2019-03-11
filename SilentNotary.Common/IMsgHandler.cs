@@ -3,6 +3,11 @@ using CSharpFunctionalExtensions;
 
 namespace SilentNotary.Common
 {
+    public interface IMsgHandler
+    {
+        Task<Result> Handle(IMessage message);
+    }
+    
     public interface IMsgHandler<in T> where T: IMessage
     {
         Task<Result> Handle(T message);

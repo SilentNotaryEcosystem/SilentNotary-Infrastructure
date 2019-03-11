@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using Newtonsoft.Json.Linq;
@@ -24,6 +25,51 @@ namespace SilentNotary.Common
         public Result Send<T>(T command) where T : IMessage
         {
             return AsyncHelpers.RunSync(() => SendAsync(command));
+        }
+
+        public async Task<Result> SendAsync(IMessage command)
+        {
+            var messageResult = GetLogModel(command);
+
+            var cmdType = command.GetType();
+
+            var openGenericType = typeof(IMsgHandler<>);
+            var closedGenericType = openGenericType.MakeGenericType(cmdType);
+
+            var handler = _diScope.Resolve(closedGenericType);
+
+            try
+            {
+                var methods = handler
+                    .GetType()
+                    .GetTypeInfo()
+                    .GetDeclaredMethods("Handle");
+                
+                foreach (var method in methods)
+                {
+                    var contains = method.GetParameters()
+                        .FirstOrDefault()
+                        ?.ToString()
+                        .Contains(cmdType.ToString());
+
+                    if (contains == true)
+                    {
+                        return await (Task<Result>) method.Invoke(handler, new[] {command});
+                    }
+                }
+
+                throw new Exception("Handler no found");
+            }
+            catch (Exception ex)
+            {
+                messageResult.Socceed = false;
+                messageResult.Info = ex.ToString();
+                throw;
+            }
+            finally
+            {
+                await SaveCommand(messageResult);
+            }
         }
 
         public async Task<Result> SendAsync<TInput>(TInput command) where TInput : IMessage
@@ -72,7 +118,7 @@ namespace SilentNotary.Common
             where TEvent : IIntegrationEvent
         {
             var handlers = _diScope.Resolve<IEnumerable<IIntegrationEventHandler<TEvent>>>().ToArray();
-            
+
             foreach (var handler in handlers)
             {
                 await handler.Handle(@event);
