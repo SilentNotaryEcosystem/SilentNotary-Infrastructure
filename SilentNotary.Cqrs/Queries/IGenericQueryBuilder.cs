@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using SilentNotary.Cqrs.Domain.Interfaces;
 using SilentNotary.Specifications;
 using X.PagedList;
 
 namespace SilentNotary.Cqrs.Queries
 {
-	public interface IGenericQueryBuilder<TSource> where TSource : class, IHasKey
+	public interface IGenericQueryBuilder<TSource> where TSource : class, Common.IHasKey
 	{
 		IGenericQuery<TDest> ProjectTo<TDest>()
 			where TDest : class;
@@ -21,7 +20,7 @@ namespace SilentNotary.Cqrs.Queries
 		/// current qouery source entity</param>
 		/// <returns></returns>
 		IGenericQueryBuilder<TDest> SwitchEntity<TDest>(Expression<Func<TSource, TDest>> switchExpression)
-			where TDest : class, IHasKey;
+			where TDest : class, Common.IHasKey;
 
 		/// <summary>
 		/// Selects the final query target.

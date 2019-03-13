@@ -1,6 +1,7 @@
 ﻿using SilentNotary.Specifications.Helpers.BooleanOperators;
 using System;
 using System.Linq.Expressions;
+using SilentNotary.Common.Query.Criterion.Abstract;
 
 namespace SilentNotary.Specifications
 {

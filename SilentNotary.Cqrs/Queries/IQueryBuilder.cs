@@ -1,6 +1,4 @@
-﻿using SilentNotary.Cqrs.Domain.Interfaces;
-
-namespace SilentNotary.Cqrs.Queries
+﻿namespace SilentNotary.Cqrs.Queries
 {
     /// <summary>
     ///     Интерфейс для построителя запросов
@@ -15,6 +13,6 @@ namespace SilentNotary.Cqrs.Queries
         IQueryFor<TResult> For<TResult>();
 
         IGenericQueryBuilder<TSource> Generic<TSource>()
-            where TSource: class, IHasKey;
+            where TSource: class, Common.IHasKey;
     }
 }
