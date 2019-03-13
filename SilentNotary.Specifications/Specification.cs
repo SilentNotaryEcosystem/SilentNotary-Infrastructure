@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace SilentNotary.Specifications
 {
-    public abstract class Specification<T>
+    public abstract class Specification<T> : ICriterion
     {
         public abstract Expression<Func<T, bool>> ToExpression();
 
