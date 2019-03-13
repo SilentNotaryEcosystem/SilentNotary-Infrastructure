@@ -4,7 +4,6 @@ using SilentNotary.Common.Command;
 using SilentNotary.Common.Entity.Uow;
 using SilentNotary.Common.Query;
 using SilentNotary.Common.Query.Criterion.Abstract;
-using SilentNotary.Cqrs.Domain.Interfaces;
 
 namespace SilentNotary.Common.Storage
 {

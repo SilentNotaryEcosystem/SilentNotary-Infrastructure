@@ -1,5 +1,4 @@
-﻿using SilentNotary.Cqrs.Domain.Interfaces;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SilentNotary.Common.Entity

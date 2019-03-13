@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace SilentNotary.Cqrs.Domain.Interfaces
+namespace SilentNotary.Common
 {
     public interface IIntegrationEventHandler<in TEvent>
         where TEvent: IIntegrationEvent

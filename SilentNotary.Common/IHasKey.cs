@@ -1,4 +1,4 @@
-﻿namespace SilentNotary.Cqrs.Domain.Interfaces
+﻿namespace SilentNotary.Common
 {
     public interface IHasKey
     {

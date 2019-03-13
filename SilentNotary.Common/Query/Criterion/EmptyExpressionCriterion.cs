@@ -1,5 +1,4 @@
 ﻿using SilentNotary.Common.Query.Criterion.Abstract;
-using SilentNotary.Cqrs.Domain.Interfaces;
 using System;
 using System.Linq.Expressions;
 

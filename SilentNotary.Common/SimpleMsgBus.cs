@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using Newtonsoft.Json.Linq;
-using SilentNotary.Cqrs.Domain.Interfaces;
 
 namespace SilentNotary.Common
 {

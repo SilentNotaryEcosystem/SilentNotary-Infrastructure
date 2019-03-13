@@ -1,5 +1,4 @@
 ﻿using SilentNotary.Common.Entity.Uow;
-using SilentNotary.Cqrs.Domain.Interfaces;
 
 namespace SilentNotary.Common.Command
 {

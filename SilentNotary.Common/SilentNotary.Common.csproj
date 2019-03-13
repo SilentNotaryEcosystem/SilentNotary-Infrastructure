@@ -5,12 +5,11 @@
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilentNotary.Infrastructure.Common</PackageId>
-    <Version>0.0.9</Version>
+    <Version>0.0.10</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="SilentNotary.Infrastructure.Cqrs.Domain" Version="0.0.8" />
     <PackageReference Include="X.PagedList" Version="7.6.0" />
   </ItemGroup>
 </Project>
