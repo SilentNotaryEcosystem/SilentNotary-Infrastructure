@@ -16,7 +16,7 @@ namespace SilentNotary.Cqrs.Queries.Impls
             return _diScope.Resolve<IQueryFor<TResult>>();
         }
 
-        public IGenericQueryBuilder<TSource> Generic<TSource>() where TSource : class, Common.IHasKey
+        public IGenericQueryBuilder<TSource> Generic<TSource>() where TSource : class, IHasKey
         {
             return _diScope.Resolve<IGenericQueryBuilder<TSource>>();
         }

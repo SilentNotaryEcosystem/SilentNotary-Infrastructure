@@ -1,5 +1,5 @@
 ﻿using System;
-using SilentNotary.Cqrs.Domain.Interfaces;
+using SilentNotary.Common;
 using SilentNotary.Specifications;
 
 namespace SilentNotary.Cqrs

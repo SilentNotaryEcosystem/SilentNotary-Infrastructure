@@ -1,6 +1,5 @@
-using SilentNotary.Cqrs.Domain.Interfaces;
-using System;
 using System.Linq;
+using SilentNotary.Common;
 
 namespace SilentNotary.Cqrs.Queries
 {
