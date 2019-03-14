@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
-using SilentNotary.Cqrs.Domain.Interfaces;
+using SilentNotary.Common;
 using SilentNotary.Cqrs.Queries;
 using SilentNotary.Specifications;
 

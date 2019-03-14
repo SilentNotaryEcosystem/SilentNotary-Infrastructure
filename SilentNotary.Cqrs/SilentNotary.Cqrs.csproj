@@ -5,7 +5,6 @@
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilentNotary.Infrastructure.Cqrs</PackageId>
-    <PackageId>SilentNotary.Infrastructure.Cqrs</PackageId>
     <Version>0.0.10</Version>
   </PropertyGroup>
   <ItemGroup>
