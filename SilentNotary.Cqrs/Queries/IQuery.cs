@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using SilentNotary.Common.Query.Criterion.Abstract;
 
 namespace SilentNotary.Cqrs.Queries
 {
@@ -7,7 +8,7 @@ namespace SilentNotary.Cqrs.Queries
     /// </summary>
     /// <typeparam name="TCriterion"> </typeparam>
     /// <typeparam name="TResult"> </typeparam>
-    public interface IQuery<in TCriterion, TResult>
+    public interface IQuery<in TCriterion, TResult> where TCriterion : ICriterion
     {
         /// <summary>
         ///     Получить результат из базы
