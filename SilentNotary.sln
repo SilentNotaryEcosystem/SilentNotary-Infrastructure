@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SilentNotary.Cqrs", "Silent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentNotary.Cqrs.EFCore", "SilentNotary.Cqrs.EFCore\SilentNotary.Cqrs.EFCore.csproj", "{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilentNotary.Cqrs.Nats", "SilentNotary.Cqrs.Nats\SilentNotary.Cqrs.Nats.csproj", "{7719D0D2-9AE3-40B7-8DA2-D3F35048130D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFDE250E-1C80-44F5-A5FF-ACC412C0FAE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7719D0D2-9AE3-40B7-8DA2-D3F35048130D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7719D0D2-9AE3-40B7-8DA2-D3F35048130D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7719D0D2-9AE3-40B7-8DA2-D3F35048130D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7719D0D2-9AE3-40B7-8DA2-D3F35048130D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
