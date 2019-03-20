@@ -5,26 +5,23 @@ using SilentNotary.Cqrs.Nats.Abstract;
 
 namespace SilentNotary.Cqrs.Nats
 {
-    public class NatsQueueFactory : INatsQueueFactory
+    public class NatsQueueFactory : INatsSenderQueueFactory
     {
-        public KeyValuePair<string, string> GetCommandQueue(IMessage message)
-        {
-            return GetCommandQueue();
-        }
+        private INatsReceiverQueryQueueFactory _natsReceiverQueryQueueFactoryImplementation;
 
-        public KeyValuePair<string, string> GetCommandQueue()
-        {
-            return new KeyValuePair<string, string>("ComandsSubject", "ComandsQueue");
-        }
+        public KeyValuePair<string, string> GetCommandQueue(IMessage message) =>
+            new KeyValuePair<string, string>("ComandsSubject", "ComandsQueue");
 
-        public string GetQueryQueue(ICriterion message, object result)
-        {
-            return GetQueryQueue();
-        }
+        public string GetQueryQueue(ICriterion message, object result) => "QuerySubject";
+    }
 
-        public string GetQueryQueue()
-        {
-            return "QuerySubject";
-        }
+    public class NatsReceiverQueryQueueFactory : INatsReceiverQueryQueueFactory
+    {
+        public string Get() => "QuerySubject";
+    }
+
+    public class NatsReceiverCommandQueueFactory : INatsReceiverCommandQueueFactory
+    {
+        public KeyValuePair<string, string> Get() => new KeyValuePair<string, string>("ComandsSubject", "ComandsQueue");
     }
 }

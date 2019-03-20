@@ -4,11 +4,19 @@ using SilentNotary.Common.Query.Criterion.Abstract;
 
 namespace SilentNotary.Cqrs.Nats.Abstract
 {
-    public interface INatsQueueFactory
+    public interface INatsSenderQueueFactory
     {
         KeyValuePair<string, string> GetCommandQueue(IMessage message);
-        KeyValuePair<string, string> GetCommandQueue();
         string GetQueryQueue(ICriterion message, object result);
-        string GetQueryQueue();
+    }
+
+    public interface INatsReceiverQueryQueueFactory
+    {
+        string Get();
+    }
+    
+    public interface INatsReceiverCommandQueueFactory
+    {
+        KeyValuePair<string, string> Get();
     }
 }

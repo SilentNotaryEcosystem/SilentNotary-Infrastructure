@@ -13,11 +13,11 @@ namespace SilentNotary.Cqrs.Nats
         private readonly IDiScope _diScope;
 
         private readonly IStorage<IMessageResult> _storage;
-        private readonly INatsQueueFactory _queueFactory;
+        private readonly INatsSenderQueueFactory _queueFactory;
         private readonly INatsConnectionFactory _connectionFactory;
 
         public NatsMessageBus(IDiScope diScope, INatsConnectionFactory connectionFactory,
-            IStorage<IMessageResult> storage, INatsQueueFactory queueFactory)
+            IStorage<IMessageResult> storage, INatsSenderQueueFactory queueFactory)
         {
             _diScope = diScope;
             _storage = storage;

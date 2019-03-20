@@ -10,10 +10,10 @@ namespace SilentNotary.Cqrs.Nats
         private readonly INatsConnectionFactory _connectionFactory;
         private readonly INatsSerializer _serializer;
         private readonly ITypeFactory _typeFactory;
-        private readonly INatsQueueFactory _queueFactory;
+        private readonly INatsSenderQueueFactory _queueFactory;
 
         public NatsQueryFactory(INatsConnectionFactory connectionFactory, INatsSerializer serializer,
-            ITypeFactory typeFactory, INatsQueueFactory queueFactory)
+            ITypeFactory typeFactory, INatsSenderQueueFactory queueFactory)
         {
             _connectionFactory = connectionFactory;
             _serializer = serializer;
