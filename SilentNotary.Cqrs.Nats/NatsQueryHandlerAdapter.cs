@@ -28,7 +28,7 @@ namespace SilentNotary.Cqrs.Nats
             var connection = _connectionFactory.Get<QueryNatsAdapter>();
             
             var response = (QueryNatsAdapter) connection.Request(_queueFactory.GetQueryQueue(criterion, typeof(TResult)),
-                new QueryNatsAdapter(criterion, typeof(TResult)), 10000);
+                new QueryNatsAdapter(criterion, typeof(TResult)));
 
             return Task.Run(() =>
                 _serializer.DeserializeMsg<TResult>(response.QueryResult, _typeFactory.Get(response.QueryResultType)));
