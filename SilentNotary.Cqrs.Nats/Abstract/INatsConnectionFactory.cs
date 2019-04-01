@@ -5,6 +5,6 @@ namespace SilentNotary.Cqrs.Nats.Abstract
 {
     public interface INatsConnectionFactory : IDisposable
     {
-        IEncodedConnection Get<T>();
+        IEncodedConnection Get<T>(Options options = null);
     }
 }

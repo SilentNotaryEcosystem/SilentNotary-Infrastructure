@@ -15,9 +15,12 @@ namespace SilentNotary.Cqrs.Nats
             _url = url;
         }
 
-        public IEncodedConnection Get<T>()
+        public IEncodedConnection Get<T>(Options options = null)
         {
-            _connection = new ConnectionFactory().CreateEncodedConnection(_url);
+            options = options ?? ConnectionFactory.GetDefaultOptions();
+            options.Url = options.Url ?? _url;
+            
+            _connection = new ConnectionFactory().CreateEncodedConnection(options);
 
             _connection.OnDeserialize = _serializer.Deserialize<T>;
             _connection.OnSerialize = _serializer.Serialize<T>;
