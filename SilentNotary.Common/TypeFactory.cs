@@ -16,6 +16,11 @@ namespace SilentNotary.Common
 
         public Type Get(string typeName)
         {
+            if (typeName.Equals(typeof(string).ToString()))
+            {
+                return typeof(string);
+            }
+            
             string genericArg = null;
             if (typeName.IndexOf("[", StringComparison.Ordinal) > 0)
             {
