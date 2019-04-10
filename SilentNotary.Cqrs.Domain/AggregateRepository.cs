@@ -14,7 +14,7 @@ namespace SilentNotary.Cqrs.Domain
 
         public abstract void Add(TAggregate aggregate);
 
-        public abstract void Update(TAggregate aggregate);
+        public abstract void Update(TAggregate aggregate, params string[] updateProperties);
 
         public abstract Task<Result<TAggregate>> GetSingleAsync<TAggregateState>(Specification<TAggregateState> specification = null);
 
