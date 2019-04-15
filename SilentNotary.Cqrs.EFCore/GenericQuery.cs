@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SilentNotary.Cqrs.Queries;
@@ -29,6 +31,11 @@ namespace SilentNotary.Cqrs.EFCore
         public async Task<IPagedList<TSource>> PagedAsync(int pageNumber, int pageSize)
         {
             return await Queryable.ToPagedListAsync(pageNumber, pageSize);
+        }
+
+        public async Task<decimal> SumAsync(Expression<Func<TSource, decimal>> expression)
+        {
+            return await Queryable.SumAsync(expression);
         }
     }
 }
