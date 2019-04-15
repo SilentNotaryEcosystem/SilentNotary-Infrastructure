@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using X.PagedList;
 
@@ -11,5 +13,7 @@ namespace SilentNotary.Cqrs.Queries
         Task<IEnumerable<T>> AllAsync();
 
         Task<IPagedList<T>> PagedAsync(int pageNumber, int pageSize);
+
+        Task<decimal> SumAsync(Expression<Func<T, decimal>> expression);
     }
 }
