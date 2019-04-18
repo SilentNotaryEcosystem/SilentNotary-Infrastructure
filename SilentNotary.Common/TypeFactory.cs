@@ -20,7 +20,8 @@ namespace SilentNotary.Common
             {
                 return typeof(string);
             }
-            
+
+            string pureTypeName = typeName;
             string genericArg = null;
             if (typeName.IndexOf("[", StringComparison.Ordinal) > 0)
             {
@@ -30,7 +31,7 @@ namespace SilentNotary.Common
                 typeName = typeName.Replace(genericArg, "T");
             }
 
-            if (_types.TryGetValue(typeName, out Type cmdType))
+            if (_types.TryGetValue(pureTypeName, out Type cmdType))
                 return cmdType;
 
             foreach (var assembly in Assemblies)
@@ -50,7 +51,7 @@ namespace SilentNotary.Common
                     cmdType = cmdType.MakeGenericType(genericArgType);
                 }
 
-                _types[typeName] = cmdType;
+                _types[pureTypeName] = cmdType;
                 return cmdType;
             }
 
