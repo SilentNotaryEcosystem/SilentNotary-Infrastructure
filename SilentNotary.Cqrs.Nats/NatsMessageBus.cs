@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using NATS.Client;
@@ -45,7 +46,7 @@ namespace SilentNotary.Cqrs.Nats
             try
             {
                 var commandQueue = _queueFactory.GetCommandQueue(command);
-                _replySubj = "xxxxx";
+                _replySubj = GetRandomString();
                 _connection.Publish(commandQueue.Value, _replySubj,
                     new CommandNatsAdapter(command));
                 _connection.Flush();
@@ -106,6 +107,20 @@ namespace SilentNotary.Cqrs.Nats
         {
             _connection.Dispose();
             _responseConnection.Dispose();
+        }
+
+        private string GetRandomString(bool lowerCase = true, int size = 7)
+        {
+            var builder = new StringBuilder();
+            Random random = new Random();
+            char ch;
+            for (var i = 0; i < size; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                builder.Append(ch);
+            }
+
+            return lowerCase ? builder.ToString().ToLower() : builder.ToString();
         }
     }
 }
