@@ -9,7 +9,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
-    <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.12" />
+    <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.14" />
     <PackageReference Include="SilentNotary.Infrastructure.Cqrs.Domain" Version="0.0.13" />
   </ItemGroup>
 </Project>

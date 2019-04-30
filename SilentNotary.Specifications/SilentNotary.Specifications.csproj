@@ -10,7 +10,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.12" />
+    <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.14" />
   </ItemGroup>
 
 </Project>
