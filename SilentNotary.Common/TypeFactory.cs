@@ -80,7 +80,8 @@ namespace SilentNotary.Common
 
         private static Type IsPrimitive(string typeName)
         {
-            return PrimitiveTypes[typeName];
+            PrimitiveTypes.TryGetValue(typeName, out Type type);
+            return type;
         }
     }
 }
