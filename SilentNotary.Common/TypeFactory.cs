@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -14,11 +15,30 @@ namespace SilentNotary.Common
 
         private readonly ConcurrentDictionary<string, Type> _types = new ConcurrentDictionary<string, Type>();
 
+        private static readonly Dictionary<string, Type> PrimitiveTypes = new Dictionary<string, Type>
+        {
+            {typeof(string).ToString(), typeof(string)},
+            {typeof(char).ToString(), typeof(char)},
+            {typeof(byte).ToString(), typeof(byte)},
+            {typeof(sbyte).ToString(), typeof(sbyte)},
+            {typeof(ushort).ToString(), typeof(ushort)},
+            {typeof(short).ToString(), typeof(short)},
+            {typeof(uint).ToString(), typeof(uint)},
+            {typeof(int).ToString(), typeof(int)},
+            {typeof(ulong).ToString(), typeof(ulong)},
+            {typeof(long).ToString(), typeof(long)},
+            {typeof(float).ToString(), typeof(float)},
+            {typeof(double).ToString(), typeof(double)},
+            {typeof(decimal).ToString(), typeof(decimal)},
+            {typeof(DateTime).ToString(), typeof(DateTime)}
+        };
+
         public Type Get(string typeName)
         {
-            if (typeName.Equals(typeof(string).ToString()))
+            var isPrimitive = IsPrimitive(typeName);
+            if (isPrimitive != null)
             {
-                return typeof(string);
+                return isPrimitive;
             }
 
             string pureTypeName = typeName;
@@ -56,6 +76,11 @@ namespace SilentNotary.Common
             }
 
             return null;
+        }
+
+        private static Type IsPrimitive(string typeName)
+        {
+            return PrimitiveTypes[typeName];
         }
     }
 }

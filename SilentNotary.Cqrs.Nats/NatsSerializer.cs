@@ -12,7 +12,7 @@ namespace SilentNotary.Cqrs.Nats
         {
             if (message == null)
                 return null;
-            
+
             var serializer = new DataContractJsonSerializer(typeof(T));
 
             using (MemoryStream stream = new MemoryStream())
@@ -35,7 +35,8 @@ namespace SilentNotary.Cqrs.Nats
 
         public T DeserializeMsg<T>(string command, Type cmdType = null)
         {
-            return (T) JsonConvert.DeserializeObject(command, cmdType ?? typeof(T));
+            cmdType = cmdType ?? typeof(T);
+            return (T) (cmdType.IsPrimitive ? command : JsonConvert.DeserializeObject(command, cmdType));
         }
     }
 }
