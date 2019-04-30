@@ -6,7 +6,7 @@
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilentNotary.Infrastructure.Specifications</PackageId>
-    <Version>0.0.11</Version>
+    <Version>0.0.12</Version>
   </PropertyGroup>
   
   <ItemGroup>
