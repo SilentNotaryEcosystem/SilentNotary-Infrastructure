@@ -5,12 +5,12 @@
         <Company>SilentNotary</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>SilentNotary.Infrastructure.Cqrs.Nats</PackageId>
-        <Version>0.0.11</Version>
+        <Version>0.0.12</Version>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
         <PackageReference Include="NATS.Client" Version="0.8.1" />
         <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.14" />
-        <PackageReference Include="SilentNotary.Infrastructure.Cqrs" Version="0.0.16" />
+        <PackageReference Include="SilentNotary.Infrastructure.Cqrs" Version="0.0.17" />
     </ItemGroup>
 </Project>
