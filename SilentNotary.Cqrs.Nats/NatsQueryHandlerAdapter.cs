@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using SilentNotary.Common;
 using SilentNotary.Common.Query.Criterion.Abstract;
@@ -30,8 +31,14 @@ namespace SilentNotary.Cqrs.Nats
             var response = (QueryNatsAdapter) connection.Request(_queueFactory.GetQueryQueue(criterion, typeof(TResult)),
                 new QueryNatsAdapter(criterion, typeof(TResult)));
 
-            return Task.Run(() =>
-                _serializer.DeserializeMsg<TResult>(response.QueryResult, _typeFactory.Get(response.QueryResultType)));
+            var resultType = _typeFactory.Get(response.QueryResultType);
+            if (resultType == typeof(TResult))
+            {
+                return Task.Run(() =>
+                    _serializer.DeserializeMsg<TResult>(response.QueryResult, resultType));
+            }
+            
+            throw new Exception(response.QueryResult);
         }
     }
 }

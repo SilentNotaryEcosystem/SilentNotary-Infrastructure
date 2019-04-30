@@ -22,6 +22,24 @@ namespace SilentNotary.Cqrs.Nats
             }
         }
 
+        private static readonly Type[] PrimitiveTypes =
+        {
+            typeof(string),
+            typeof(char),
+            typeof(byte),
+            typeof(sbyte),
+            typeof(ushort),
+            typeof(short),
+            typeof(uint),
+            typeof(int),
+            typeof(ulong),
+            typeof(long),
+            typeof(float),
+            typeof(double),
+            typeof(decimal),
+            typeof(DateTime)
+        };
+
         public object Deserialize<T>(byte[] data)
         {
             using (MemoryStream stream = new MemoryStream())
@@ -36,7 +54,12 @@ namespace SilentNotary.Cqrs.Nats
         public T DeserializeMsg<T>(string command, Type cmdType = null)
         {
             cmdType = cmdType ?? typeof(T);
-            return (T) (cmdType.IsPrimitive ? command : JsonConvert.DeserializeObject(command, cmdType));
+            return (T) (IsPrimitive(cmdType) ? command : JsonConvert.DeserializeObject(command, cmdType));
+        }
+
+        private static bool IsPrimitive(Type type)
+        {
+            return Array.IndexOf(PrimitiveTypes, type) >= 0;
         }
     }
 }
