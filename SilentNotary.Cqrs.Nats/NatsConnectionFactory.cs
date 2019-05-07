@@ -19,7 +19,8 @@ namespace SilentNotary.Cqrs.Nats
         {
             options = options ?? ConnectionFactory.GetDefaultOptions();
             options.Url = options.Url ?? _url;
-            
+            options.Timeout = options.Timeout <= 0 ? 60000 : options.Timeout;
+
             _connection = new ConnectionFactory().CreateEncodedConnection(options);
 
             _connection.OnDeserialize = _serializer.Deserialize<T>;
