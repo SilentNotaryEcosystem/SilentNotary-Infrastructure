@@ -29,7 +29,7 @@ namespace SilentNotary.Cqrs.Nats
             var connection = _connectionFactory.Get<QueryNatsAdapter>();
             
             var response = (QueryNatsAdapter) connection.Request(_queueFactory.GetQueryQueue(criterion, typeof(TResult)),
-                new QueryNatsAdapter(criterion, typeof(TResult)));
+                new QueryNatsAdapter(criterion, typeof(TResult)), 60000);
 
             var resultType = _typeFactory.Get(response.QueryResultType);
             if (resultType == typeof(TResult))

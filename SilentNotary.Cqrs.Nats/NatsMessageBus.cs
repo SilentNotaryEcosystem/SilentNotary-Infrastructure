@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using NATS.Client;
@@ -18,6 +20,7 @@ namespace SilentNotary.Cqrs.Nats
         private readonly INatsSenderQueueFactory _queueFactory;
         private readonly IEncodedConnection _connection;
         private readonly IEncodedConnection _responseConnection;
+        private List<IAsyncSubscription> _subscriptions = new List<IAsyncSubscription>();
         private string _replySubj;
 
         public NatsMessageBus(IDiScope diScope, INatsConnectionFactory connectionFactory,
@@ -78,12 +81,33 @@ namespace SilentNotary.Cqrs.Nats
         private Task<Result> GetResponse()
         {
             var promise = new TaskCompletionSource<Result>();
-            _responseConnection.SubscribeAsync(_replySubj, "responseQueue",
+            var completed = 0;
+            var waitTime = 0;
+
+            ThreadPool.QueueUserWorkItem(data =>
+            {
+                while (completed == 0)
+                {
+                    if (waitTime >= 60)
+                    {
+                        promise.SetCanceled();
+                        break;
+                    }
+                    
+                    Thread.Sleep(1000);
+                    waitTime++;
+                }
+            });
+
+            var subscription = _responseConnection.SubscribeAsync(_replySubj, "responseQueue",
                 (sender, args) =>
                 {
                     var result = (ResultAdapter) args.ReceivedObject;
                     promise.SetResult(result.IsSuccess ? Result.Ok() : Result.Fail(result.Data));
+                    completed++;
                 });
+            _subscriptions.Add(subscription);
+            
             return promise.Task;
         }
 
@@ -107,6 +131,10 @@ namespace SilentNotary.Cqrs.Nats
         {
             _connection.Dispose();
             _responseConnection.Dispose();
+            foreach (var subscription in _subscriptions)
+            {
+                subscription.Dispose();
+            }
         }
 
         private string GetRandomString(bool lowerCase = true, int size = 7)

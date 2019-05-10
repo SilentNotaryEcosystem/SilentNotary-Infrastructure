@@ -5,7 +5,7 @@
         <Company>SilentNotary</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>SilentNotary.Infrastructure.Cqrs.Nats</PackageId>
-        <Version>0.0.14</Version>
+        <Version>0.0.15</Version>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
