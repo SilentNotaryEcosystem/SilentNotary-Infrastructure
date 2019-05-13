@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using NATS.Client;
 using SilentNotary.Common;
 using SilentNotary.Common.Query.Criterion.Abstract;
 using SilentNotary.Cqrs.Nats.Abstract;
@@ -8,7 +9,8 @@ using SilentNotary.Cqrs.Queries;
 
 namespace SilentNotary.Cqrs.Nats
 {
-    public class NatsQueryHandlerAdapter<TCriterion, TResult> : IQuery<TCriterion, TResult> where TCriterion : ICriterion
+    public class NatsQueryHandlerAdapter<TCriterion, TResult> : IQuery<TCriterion, TResult>
+        where TCriterion : ICriterion
     {
         private readonly INatsConnectionFactory _connectionFactory;
         private readonly INatsSerializer _serializer;
@@ -27,9 +29,18 @@ namespace SilentNotary.Cqrs.Nats
         public Task<TResult> Ask(TCriterion criterion)
         {
             var connection = _connectionFactory.Get<QueryNatsAdapter>();
-            
-            var response = (QueryNatsAdapter) connection.Request(_queueFactory.GetQueryQueue(criterion, typeof(TResult)),
-                new QueryNatsAdapter(criterion, typeof(TResult)), 60000);
+
+            QueryNatsAdapter response;
+            try
+            {
+                response = (QueryNatsAdapter) connection.Request(
+                    _queueFactory.GetQueryQueue(criterion, typeof(TResult)),
+                    new QueryNatsAdapter(criterion, typeof(TResult)), 60000);
+            }
+            catch (NATSTimeoutException)
+            {
+                throw new Exception("Nats connection timeout exceed");
+            }
 
             var resultType = _typeFactory.Get(response.QueryResultType);
             if (resultType == typeof(TResult))
@@ -37,7 +48,7 @@ namespace SilentNotary.Cqrs.Nats
                 return Task.Run(() =>
                     _serializer.DeserializeMsg<TResult>(response.QueryResult, resultType));
             }
-            
+
             throw new Exception(response.QueryResult);
         }
     }

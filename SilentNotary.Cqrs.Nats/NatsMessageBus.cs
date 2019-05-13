@@ -90,7 +90,7 @@ namespace SilentNotary.Cqrs.Nats
                 {
                     if (waitTime >= 60)
                     {
-                        promise.SetCanceled();
+                        promise.SetResult(Result.Fail("Nats connection timeout exceed"));
                         break;
                     }
                     
