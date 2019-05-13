@@ -28,11 +28,11 @@ namespace SilentNotary.Cqrs.Nats
             }
             catch (NATSConnectionException ex)
             {
-                throw new Exception($"Nats error: {ex.Message}");
+                throw new Exception($"Nats connection error: {ex.Message}");
             }
             catch (NATSNoServersException ex)
             {
-                throw new Exception($"Nats error: {ex.Message}");
+                throw new Exception($"Nats no server error: {ex.Message}");
             }
 
             _connection.OnDeserialize = _serializer.Deserialize<T>;
