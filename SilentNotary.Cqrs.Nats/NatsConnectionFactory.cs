@@ -1,3 +1,4 @@
+using System;
 using NATS.Client;
 using SilentNotary.Cqrs.Nats.Abstract;
 
@@ -21,7 +22,18 @@ namespace SilentNotary.Cqrs.Nats
             options.Url = options.Url ?? _url;
             options.Timeout = options.Timeout <= 0 ? 60000 : options.Timeout;
 
-            _connection = new ConnectionFactory().CreateEncodedConnection(options);
+            try
+            {
+                _connection = new ConnectionFactory().CreateEncodedConnection(options);
+            }
+            catch (NATSConnectionException ex)
+            {
+                throw new Exception($"Nats error: {ex.Message}");
+            }
+            catch (NATSNoServersException ex)
+            {
+                throw new Exception($"Nats error: {ex.Message}");
+            }
 
             _connection.OnDeserialize = _serializer.Deserialize<T>;
             _connection.OnSerialize = _serializer.Serialize<T>;
