@@ -6,11 +6,11 @@
     <Company>SilentNotary</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>SilentNotary.Infrastructure.Specifications</PackageId>
-    <Version>0.0.14</Version>
+    <Version>0.0.15</Version>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.15" />
+    <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.16" />
   </ItemGroup>
 
 </Project>
