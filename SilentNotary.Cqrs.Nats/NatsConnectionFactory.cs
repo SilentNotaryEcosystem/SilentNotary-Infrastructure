@@ -7,24 +7,20 @@ namespace SilentNotary.Cqrs.Nats
     public class NatsConnectionFactory : INatsConnectionFactory
     {
         private readonly INatsSerializer _serializer;
-        private readonly string _url;
+        private readonly Options _options;
         private IEncodedConnection _connection;
 
-        public NatsConnectionFactory(INatsSerializer serializer, string url)
+        public NatsConnectionFactory(INatsSerializer serializer, Options options)
         {
             _serializer = serializer;
-            _url = url;
+            _options = options;
         }
 
-        public IEncodedConnection Get<T>(Options options = null)
+        public IEncodedConnection Get<T>()
         {
-            options = options ?? ConnectionFactory.GetDefaultOptions();
-            options.Url = options.Url ?? _url;
-            options.Timeout = options.Timeout <= 0 ? 60000 : options.Timeout;
-
             try
             {
-                _connection = new ConnectionFactory().CreateEncodedConnection(options);
+                _connection = new ConnectionFactory().CreateEncodedConnection(_options);
             }
             catch (NATSConnectionException ex)
             {
