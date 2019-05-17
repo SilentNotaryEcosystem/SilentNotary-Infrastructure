@@ -14,10 +14,7 @@ namespace SilentNotary.Cqrs.Nats
         {
             _serializer = serializer;
             _options = options;
-        }
 
-        public IEncodedConnection Get<T>()
-        {
             try
             {
                 _connection = new ConnectionFactory().CreateEncodedConnection(_options);
@@ -30,7 +27,10 @@ namespace SilentNotary.Cqrs.Nats
             {
                 throw new Exception($"Nats no server error: {ex.Message}");
             }
+        }
 
+        public IEncodedConnection Get<T>()
+        {
             _connection.OnDeserialize = _serializer.Deserialize<T>;
             _connection.OnSerialize = _serializer.Serialize<T>;
 
