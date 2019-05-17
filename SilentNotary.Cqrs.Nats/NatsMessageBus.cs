@@ -129,8 +129,6 @@ namespace SilentNotary.Cqrs.Nats
 
         public void Dispose()
         {
-            _connection.Dispose();
-            _responseConnection.Dispose();
             foreach (var subscription in _subscriptions)
             {
                 subscription.Dispose();
