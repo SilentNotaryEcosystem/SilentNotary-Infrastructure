@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using NATS.Client;
 using SilentNotary.Cqrs.Nats.Abstract;
 
@@ -8,16 +9,43 @@ namespace SilentNotary.Cqrs.Nats
     {
         private readonly INatsSerializer _serializer;
         private readonly Options _options;
-        private IEncodedConnection _connection;
+
+        private ConcurrentDictionary<Type, IEncodedConnection> _connections =
+            new ConcurrentDictionary<Type, IEncodedConnection>();
 
         public NatsConnectionFactory(INatsSerializer serializer, Options options)
         {
             _serializer = serializer;
             _options = options;
+        }
+
+        public IEncodedConnection Get<T>()
+        {
+            var connection = GetConnection<T>();
+            connection.OnDeserialize = _serializer.Deserialize<T>;
+            connection.OnSerialize = _serializer.Serialize<T>;
+
+            return connection;
+        }
+
+        public void Dispose()
+        {
+            foreach (var connection in _connections)
+            {
+                connection.Value.Dispose();
+            }
+        }
+
+        private IEncodedConnection GetConnection<T>()
+        {
+            var type = typeof(T);
+
+            if (_connections.TryGetValue(type, out var connection))
+                return connection;
 
             try
             {
-                _connection = new ConnectionFactory().CreateEncodedConnection(_options);
+                connection = new ConnectionFactory().CreateEncodedConnection(_options);
             }
             catch (NATSConnectionException ex)
             {
@@ -27,19 +55,10 @@ namespace SilentNotary.Cqrs.Nats
             {
                 throw new Exception($"Nats no server error: {ex.Message}");
             }
-        }
 
-        public IEncodedConnection Get<T>()
-        {
-            _connection.OnDeserialize = _serializer.Deserialize<T>;
-            _connection.OnSerialize = _serializer.Serialize<T>;
+            while (!_connections.TryAdd(type, connection)) ;
 
-            return _connection;
-        }
-
-        public void Dispose()
-        {
-            _connection.Dispose();
+            return connection;
         }
     }
 }
