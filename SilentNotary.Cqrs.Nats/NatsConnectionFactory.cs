@@ -8,7 +8,7 @@ namespace SilentNotary.Cqrs.Nats
     public class NatsConnectionFactory : INatsConnectionFactory
     {
         private readonly INatsSerializer _serializer;
-        private readonly Options _options;
+        public readonly Options Options;
 
         private ConcurrentDictionary<Type, IEncodedConnection> _connections =
             new ConcurrentDictionary<Type, IEncodedConnection>();
@@ -16,7 +16,7 @@ namespace SilentNotary.Cqrs.Nats
         public NatsConnectionFactory(INatsSerializer serializer, Options options)
         {
             _serializer = serializer;
-            _options = options;
+            Options = options;
         }
 
         public IEncodedConnection Get<T>()
@@ -45,7 +45,7 @@ namespace SilentNotary.Cqrs.Nats
 
             try
             {
-                connection = new ConnectionFactory().CreateEncodedConnection(_options);
+                connection = new ConnectionFactory().CreateEncodedConnection(Options);
             }
             catch (NATSConnectionException ex)
             {
@@ -56,7 +56,7 @@ namespace SilentNotary.Cqrs.Nats
                 throw new Exception($"Nats no server error: {ex.Message}");
             }
 
-            while (!_connections.TryAdd(type, connection)) ;
+            while (!_connections.TryAdd(type, connection));
 
             return connection;
         }
