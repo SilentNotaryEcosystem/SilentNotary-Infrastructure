@@ -11,7 +11,7 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="CSharpFunctionalExtensions" Version="1.10.0" />
-        <PackageReference Include="NATS.Client" Version="0.10.1" />
+        <PackageReference Include="NATS.Client" Version="0.12.0" />
         <PackageReference Include="SilentNotary.Infrastructure.Common" Version="0.0.16" />
         <PackageReference Include="SilentNotary.Infrastructure.Cqrs" Version="0.0.19" />
     </ItemGroup>
