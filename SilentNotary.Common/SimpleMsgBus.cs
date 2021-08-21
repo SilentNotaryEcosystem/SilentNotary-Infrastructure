@@ -28,7 +28,7 @@ namespace SilentNotary.Common
 
         public async Task<Result> SendAsync(IMessage command)
         {
-            var messageResult = GetLogModel(command);
+            //var messageResult = GetLogModel(command);
 
             var cmdType = command.GetType();
 
@@ -61,19 +61,19 @@ namespace SilentNotary.Common
             }
             catch (Exception ex)
             {
-                messageResult.Socceed = false;
-                messageResult.Info = ex.ToString();
+                // messageResult.Socceed = false;
+                // messageResult.Info = ex.ToString();
                 throw;
             }
-            finally
-            {
-                await SaveCommand(messageResult);
-            }
+            // finally
+            // {
+            //     await SaveCommand(messageResult);
+            // }
         }
 
         public async Task<Result> SendAsync<TInput>(TInput command) where TInput : IMessage
         {
-            var messageResult = GetLogModel(command);
+            //var messageResult = GetLogModel(command);
 
             try
             {
@@ -82,19 +82,19 @@ namespace SilentNotary.Common
             }
             catch (Exception e)
             {
-                messageResult.Socceed = false;
-                messageResult.Info = e.ToString();
+                // messageResult.Socceed = false;
+                // messageResult.Info = e.ToString();
                 throw;
             }
-            finally
-            {
-                await SaveCommand(messageResult);
-            }
+            // finally
+            // {
+            //     await SaveCommand(messageResult);
+            // }
         }
 
         public async Task<Result<TOutput>> SendAsync<TInput, TOutput>(TInput command) where TInput : IMessage
         {
-            var messageResult = GetLogModel(command);
+            //var messageResult = GetLogModel(command);
 
             try
             {
@@ -103,14 +103,14 @@ namespace SilentNotary.Common
             }
             catch (Exception e)
             {
-                messageResult.Socceed = false;
-                messageResult.Info = e.ToString();
+                //messageResult.Socceed = false;
+                //messageResult.Info = e.ToString();
                 throw;
             }
-            finally
-            {
-                await SaveCommand(messageResult);
-            }
+            // finally
+            // {
+            //     await SaveCommand(messageResult);
+            // }
         }
 
         public async Task PublishAsync<TEvent>(TEvent @event)

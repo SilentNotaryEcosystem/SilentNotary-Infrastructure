@@ -45,7 +45,7 @@ namespace SilentNotary.Cqrs.Nats
 
         public async Task<Result> SendAsync<TInput>(TInput command) where TInput : IMessage
         {
-            var messageResult = GetLogModel(command);
+            //var messageResult = GetLogModel(command);
             try
             {
                 var commandQueue = _queueFactory.GetCommandQueue(command);
@@ -58,14 +58,14 @@ namespace SilentNotary.Cqrs.Nats
             }
             catch (Exception e)
             {
-                messageResult.Socceed = false;
-                messageResult.Info = e.ToString();
+                // messageResult.Socceed = false;
+                // messageResult.Info = e.ToString();
                 throw;
             }
-            finally
-            {
-                await SaveCommand(messageResult);
-            }
+            // finally
+            // {
+            //     await SaveCommand(messageResult);
+            // }
         }
 
         public async Task<Result<TOutput>> SendAsync<TInput, TOutput>(TInput command) where TInput : IMessage
